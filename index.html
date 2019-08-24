@@ -417,6 +417,7 @@
             $('.drawer, .overlay').toggleClass("open");
             navigator.vibrate(11);
         });
+        $(".overlay").click(function(){$(".hamburger").removeClass("is-active")})
         $(".nav-item").click(function(){
             navigator.vibrate(10);
         });
