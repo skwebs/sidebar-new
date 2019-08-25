@@ -57,6 +57,42 @@
         --hamburger-color:#000;
         --blue-gradient:linear-gradient(to top right, rgba(3, 17, 85, 1), rgba(24,154,201,1));
     }
+    html{
+    height: 100%;
+    color: #F3F4F5;
+    background-color: #EFEFEF;
+    }
+    
+    /*-------------
+    Layout
+    --------------*/
+    
+    body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font: 400 15px/1.4 'Open Sans',sans-serif;
+    overflow-x:hidden;
+    }
+    
+    header{
+    /* We want the header to have a static height - it will always take up just as much space as it needs.  */
+    /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+    flex: 0 0 auto;
+    }
+    
+    main{
+    /* By setting flex-grow to 1, the main content will take up 
+    all of the remaining space on the page (the other elements have flex-grow: 0 and won't contest the free space). */
+    /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
+    flex: 1 0 auto;
+    }
+    
+    footer{
+    /* Just like the header, the footer will have a static height - it shouldn't grow or shrink.  */
+    /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+    flex: 0 0 auto;
+    }
     
     .preloader{position:fixed;top:0;bottom:0;left:0;right:0;z-index:99999; background-color: #2a2a72;background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);}
     .center-center{display:flex;flex-direction: column;justify-content: center;align-items:center;}
@@ -297,7 +333,7 @@
               <p></p>
           </div>
       </div>
-      
+      <header>
       <nav class="navbar navbar-expand-md fixed-top navbar-light bg-white py-md-0">
           <div class="container" >
               <a class="navbar-brand py-0 py-md-2" href="./">
@@ -340,11 +376,12 @@
               </div>
           </div>
       </nav>
-      
+      </header>
+      <main>
     <div class="container p-4" >
         <h4 class="text-center" >Welcome in S.K.Webs.</h4>
         <p class="mt-2 alert alert-success text-center" >You feel free to use this code.</p>
-        <a class="btn btn-info btn-block my-2"  href="index2.html" >View Another Demo</a>
+        <a class="btn btn-info btn-block my-2"  href="index2.html" >View Sidebar over HEADER Demo</a>
         <h3 class="text-center" >Sidebar Features</h3>
         <ol class="pl-3" >
             <li>Based on Bootstrap 4.</li>
@@ -383,7 +420,7 @@
     -->
     
     
-    
+    </main>
     <!-- Optional JavaScript -->
     <script type="text/javascript">
         window.onload = preloader;
@@ -490,7 +527,7 @@
     }); // jquery ended 
 
 
-    document.write('<footer class="footer bg-dark fixed-bottom" ><p class="my-auto py-2 text-center text-light " >Created by <b><a class="text-light ftrLink" href="https://skwebs.github.io" >S.K.Webs</a></b></p></footer>')
+    document.write('<footer class="footer bg-dark" ><p class="my-auto py-2 text-center text-light " >Created by <b><a class="text-light ftrLink" href="https://skwebs.github.io" >S.K.Webs</a></b></p></footer>')
     </script>
     </body>
 </html>
