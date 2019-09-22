@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="This is Responsive Sidebar Menu that is created with Bootstrap 4 and it show only on small screen and show regular navigation menu on desktop view." />
+    <meta name="keywords" content="Sidebar Menu, Sidebar with bootstrap, sidebar with bootstrap 4, Menu Drawer, Sidebar Menu Drawer, Mobile Sidebar, Mobile Sidebar Menu, Mobile Menu, Mobile Menu Drawer, Sidebar Menu Drawer" />
+    <meta http-equiv="Content-Type" content="text/html; " />
+    
+    <!-- og tags -->
+    <title>:: Bootstrap Sidebar ::</title>    
+    
+    <meta property="og:url" content="https://skwebs.github.io/" />
+    <meta property="og:title" content=":: Bootstrap Sidebar ::" >
+    <meta property="og:description"  content="This is Responsive Sidebar Menu that is created with Bootstrap 4 and it show only on small screen and show regular navigation menu on desktop view." />
+    <meta property="og:keywords" content="Sidebar Menu, Sidebar with bootstrap, sidebar with bootstrap 4, Menu Drawer, Sidebar Menu Drawer, Mobile Sidebar, Mobile Sidebar Menu, Mobile Menu, Mobile Menu Drawer, Sidebar Menu Drawer" />
+    <meta property="og:type" content="website" >
+    <meta property="og:site_name" content="Bootstrap Sidebar" >
+    <meta property="og:image" content="https://skwebs.github.io/files/img/bs-og-1200.png">
+    <meta property="og:image:url" content="https://skwebs.github.io/files/img/bs-og-1200.png">
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="icon-logo">
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    
+    
+    <!-- other meta -->
+    <meta name="web_author" content="Satish Kumar Sharma">  
+    <meta name="copyright" content="S.K.Webs">
+    
+    <!-- Android  -->
+    <meta name="theme-color" content="black">
+    
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-title" content="Bootstrap-Sidebar">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
+    
+    <!--favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://skwebs.github.io/files/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://skwebs.github.io/files/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://skwebs.github.io/files/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="https://skwebs.github.io/files/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="https://skwebs.github.io/files/img/favicon/favicon.ico">
+    <meta name="theme-color" content="#0d123d">
+    
+    
+    
+    
+    
+    
+    <!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.6/waves.min.css" integrity="sha256-8+G8C5iYz5jhB7td5F7cZCUpwiSowuTsdsZEusTBgl4=" crossorigin="anonymous" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Style CSS -->
+    
+    <style type="text/css">
+    :root{
+    --hamburger-color:#000;
+    --gradient-blue:linear-gradient(to top right, rgba(3, 17, 85, 1), rgba(24,154,201,1));
+    }
+    *{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+    
+    body {
+    padding: 0;
+    margin: 0;
+    }
+    html{
+    height: 100%;
+    color: #F3F4F5;
+    background-color: #EFEFEF;
+    }
+    
+    /*-------------
+    Layout
+    --------------*/
+    
+    body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font: 400 15px/1.4 'Open Sans',sans-serif;
+    overflow-x:hidden;
+    }
+    
+    header{
+    /* We want the header to have a static height - it will always take up just as much space as it needs.  */
+    /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+    flex: 0 0 auto;
+    }
+    
+    main{
+    /* By setting flex-grow to 1, the main content will take up 
+    all of the remaining space on the page (the other elements have flex-grow: 0 and won't contest the free space). */
+    /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
+    flex: 1 0 auto;
+    }
+    
+    footer{
+    /* Just like the header, the footer will have a static height - it shouldn't grow or shrink.  */
+    /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+    flex: 0 0 auto;
+    }
+    
+    .preloader{position:fixed;top:0;bottom:0;left:0;right:0;z-index:99999; background-color: #2a2a72;background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);}
+    .center-center{display:flex;flex-direction: column;justify-content: center;align-items:center;}
+    .preloader p{position:relative;width:100%;background: white;height:.1rem;animation:move 1.2s ease-in-out infinite; }
+    .preloader p{margin-top:7vh;}
+    @keyframes move{0%{width:60%;}22%{width:10%;}50%{width:95%;}78%{width:10%;}100%{width:60%;}}
+    @keyframes hid{0%{opacity:1;} 100%{opacity:0;}}
+    @media only screen and (orientation: portrait) {
+    .preloader img{width:100%;}
+    .img{height:100vh;}}
+    @media only screen and (orientation: landscape) {
+    .preloader img{height:75%;}
+    .img{width:100%;}
+    }
+    .preloader div{width:100vmin;}
+    
+    /*
+    |-------------------–------------------------
+    | c-hamburger.css part
+    |--------------------------------------------
+    */
+    
+    .hamburger {
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible; 
+    }
+    /*.hamburger:hover {
+    opacity: 0.7; 
+    }
+    .hamburger.is-active:hover {
+    opacity: 0.7; 
+    }*/
+    .hamburger.is-active .hamburger-inner,
+    .hamburger.is-active .hamburger-inner::before,
+    .hamburger.is-active .hamburger-inner::after {
+    background-color:var(--hamburger-color);
+    }
+    
+    .hamburger-box {
+    width: 24px;
+    height: 12px;
+    display: inline-block;
+    position: relative; 
+    }
+    
+    .hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: 0px; 
+    }
+    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 24px;
+    height: 2px;
+    background-color:var(--hamburger-color);
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; }
+    .hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; 
+    }
+    .hamburger-inner::before {
+    top: -8px; 
+    }
+    .hamburger-inner::after {
+    bottom: -8px; 
+    }
+    
+    /*
+    For more design go - https://github.com/jonsuh/hamburgers/blob/master/dist/hamburgers.css
+    */
+    
+    /* Arrow Alt */
+    .hamburger--arrowalt .hamburger-inner::before {
+    transition: top 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1); 
+    }
+    .hamburger--arrowalt .hamburger-inner::after {
+    transition: bottom 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1); 
+    }
+    .hamburger--arrowalt.is-active .hamburger-inner::before {
+    top: 0;
+    /*transform: translate3d(-8px, -10px, 0) rotate(-45deg) scale(0.7, 1);*/
+    transform: translate3d(-6px, -5.5px, 0) rotate(-45deg) scale(0.7, 1);
+    transition: top 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22); 
+    }
+    .hamburger--arrowalt.is-active .hamburger-inner::after {
+    bottom: 0;
+    /*transform: translate3d(-8px, 10px, 0) rotate(45deg) scale(0.7, 1);*/
+    transform: translate3d(-6px, 5.5px, 0) rotate(45deg) scale(0.7, 1);
+    transition: bottom 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22); 
+    }
+    
+    
+    /* Reset CSS*/
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    order:1px solid !important;
+    }
+    
+    /* Drawer */
+    .drawer{
+    position:fixed;
+    width:250px;
+    bottom:0;
+    left:-250px;
+    top:0;
+    background:white;
+    ackground-image:linear-gradient(rgba(200,200,200,.9), rgba(255,255,255,.9)), url("img/cover.jpg");
+    transition:.3s;
+    z-index:998;
+    /*box-shadow:0 0 5px rgba(0,0,0,.2);*/
+    overflow-y:scroll;
+    }
+    .drawer ul li {padding-left:30px;}
+    .drawer ul li a {color:#000;}
+    .drawer.open{left:0;}
+    .drawer .nav-item{box-shadow:1px 0 1px rgba(0,0,0,.09);}
+    .drawer .active{background:linear-gradient(to right, green,5px, #fff 5px);}
+    
+    /* Overlay */
+    .overlay{
+    position:fixed;
+    top:0;bottom:0;left:0;right:0;
+    background:rgba(0,0,0,.5);
+    z-index:997;
+    transition:.3s;
+    display:none;
+    }
+    .overlay.open{display:block;}
+    
+    /* Navbar */
+    .navbar{
+    box-shadow:0 0 5px rgba(0,0,0,.5);
+    z-index:999;
+    }
+    .navbar-brand{height:; line-height:;}
+    .navbar-brand img{height:100%;}
+    .navbar-toggler:hover,
+    .navbar-toggler:active{
+    outline-color: transparent;
+    background-image: var(--gradient-blue); /*linear-gradient(to top right, rgba(3, 17, 85, 1), rgba(24,154,201,1)); */
+    color:#fff;
+    }
+    .navbar-collapse .active{background:linear-gradient(to top, green,4px, #fff 4px);}
+    .nav-item:hover{background: var(--gradient-blue); /*linear-gradient(to right, #031155,#189AC9);*/ }
+    .nav-item a:hover{color:white !important;}
+    /*.navbar-collapse{overflow-x:scroll;}*/
+    
+    /* Navbar Brand */
+    .navbar-nav .nav-item{line-height:25px;}
+    .navbar-brand{height:40px;}
+    .navbar-brand img{height:100%;}
+    
+    /* Nav Link Active css */
+    .active a{color: green !important; font-weight:bold;}
+    
+    /* Footers */
+    .copyright {
+    background:rgba(0,0,0,.2);
+    color:grey;
+    }
+    #more-links a{
+    margin:5px 10px;
+    display:inline-block;
+    color:grey;
+    text-decoration:none;
+    transition:.5s;
+    }
+    #more-links a:hover{
+    color:#fff;
+    transform:translateX(3px);
+    }
+    /* Style all font awesome icons */
+    .footer .social{
+    flex-direction:row;
+    }
+    .footer .social .fa {
+    font-size: 1.2rem;
+    width: 40px;
+    height:40px;
+    line-height:40px;
+    text-align: center;
+    text-decoration: none;
+    color:#fff;
+    transition:.3s;
+    }
+    .footer .social .fa:hover{
+    border-radius: 50%;
+    background:rgba(0,0,0,.05);
+    transform:scale(.9);
+    border:1px solid #fff;
+    }
+    
+    .grad-blue{background:var(--gradient-blue);}
+    .nowrap{white-space:nowrap;}
+    .bg-black{
+    background-color: black;
+    }
+    .text-lightgrey{color:lightgrey;}
+    .share{
+    position:fixed;
+    background:rgba(255,255,255,.05);
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    right:25px;
+    bottom:100px;
+    box-shadow:0 0 10px rgba(0,0,0,.5),0 0 25px rgba(0,0,0,.05);
+    color:rgba(0,0,0,.3);
+    z-index:1200;
+    }
+    
+    </style>
+  </head>
+  <body>
+      <!--preloader-->
+      <div class="preloader center-center" >
+          <img src="https://cdn.jsdelivr.net/gh/skwebs/files/img/bs-1200.png" >
+          <div class="center-center" >
+              <p></p>
+          </div>
+      </div>
+      <header>
+      <nav class="navbar navbar-expand-md fixed-top navbar-light bg-white py-md-0">
+          <div class="container" >
+              <a class="navbar-brand py-0 py-md-1" href="./">
+	              <img src="https://cdn.jsdelivr.net/gh/skwebs/files/img/bs-360.png" >
+              </a>
+              <!-- Collapse -->
+              <button class="hamburger hamburger--arrowalt navbar-toggler" type="button"
+              aria-controls="menuContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+              </span>
+              </button>
+              <div class="collapse navbar-collapse ml-md-5" id="menuContent" >
+                  <ul class="navbar-nav">
+                      <li class="nav-item active">
+                          <a class="nav-link" href="./">Home <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item ">
+                          <a class="nav-link" href="#">About Us</a>
+                      </li>
+                      <li class="nav-item ">
+                          <a class="nav-link" href="#">Contact Us</a>
+                      </li>
+                       <li class="nav-item ">
+                      <a class="nav-link" href="#">Our Mission</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+      </header>
+      <main>
+<div class="container p-4" >
+        <h4 class="text-center" >Welcome in S.K.Webs.</h4>
+        <p class="mt-2 alert alert-success text-center" >You feel free to use this code.</p>
+        <a class="btn btn-info btn-block my-2"  href="index2.html" >View Sidebar over HEADER Demo</a>
+        <h3 class="text-center" >Sidebar Features</h3>
+        <ol class="pl-3" >
+            <li>Based on Bootstrap 4.</li>
+            <li>No need other plugin.</li>
+            <li>Responsive for all size Screen.</li>
+            <li>Show Sidebar only on Mobile View.</li>
+            <li>And regular navigation on Desktop View.</li>
+            <li>Left-Right Swipe support. Swipe finger left or right to check it.</li>
+        </ol>
+        <a href="https://github.com/skwebs/sidebar-new" class="btn btn-success btn-block" >Github</a>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </main>
+    <i class="share center-center fa fa-share-alt fa-2x" ></i>
+    <footer class="footer bg-dark" >
+	    <div class="bg-info py-1" >
+		    <div class="container social center-center" >
+			    <span class="d-none d-md-block text-light mr-5" >You can connect us on social media : </span> 
+			    <i class="fa fa-youtube" ></i>
+			    <i class="fa fa-facebook" ></i>
+			    <i class="fa fa-twitter" ></i>
+			    <i class="fa fa-instagram" ></i>
+		    </div>
+	    </div>
+	    <div id="more-links" class="container py-3" >
+		    <a href="#" class="link" >Privacy Policy</a>
+		    <a href="#" >Terms & Conditions</a>
+		    <a href="#" class="link" >Sitemap</a>
+		    
+	    </div>
+	    <div class="copyright my-auto py-3 text-center " >
+		    &copy <script>document.write(new Date().getFullYear())</script> <a class="text-lightgrey mr-md-5" href="./" ><b> SKWebs.Github.io </b></a><span class="d-none d-md-inine" >All Right Reserved.</span>
+		    <hr class="d-md-none bg-black" >
+		    Designed & Developed by <strong><a href="https://skwebs.github.io" class="d-inline-block border border-primary rounded px-1" >S.K.Webs</a></strong> <!--<a href="https://facebook.com/skwebsofficial" class="nowrap border border-primary rounded px-1 d-inline-block" >S.K.Sharma <i class="fa fa-facebook-square" ></i></a>-->
+	    </div>
+    </footer>
+    
+    <!-- Optional JavaScript -->
+    <script type="text/javascript">
+        window.onload = preloader;
+        var pl = document.querySelector(".preloader");
+        function preloader(){
+            pl.style.WebkitAnimation = "hid .7s ease-in-out ";
+            pl.style.animation = "hid .7s ease-in-out ";
+        }
+            
+            pl.addEventListener("animationend", hid);
+            pl.addEventListener("WebkitAnimatioEnd", hid);
+            
+        function hid(){
+            pl.style.display = "none";
+        }
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.6/waves.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/joeldbirch/superfish/dist/js/hoverIntent.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/joeldbirch/superfish/dist/js/superfish.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/joeldbirch/superfish/dist/js/supersubs.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/anshumemorial/files/js/share.js"></script>
+    <script type="text/javascript">
+    $(function (){
+        $('a').click(function(){navigator.vibrate(10);});
+        
+        $('<div class="drawer d-md-none" ></div>').appendTo("body");
+        $('<div class="overlay d-md-none" ></div>').appendTo("body");
+        $(".drawer, body").css("padding-top",$(".navbar").outerHeight());
+        $('.navbar-nav').clone().appendTo('.drawer')
+        $(".navbar-toggler, .overlay").click(function(){
+            $('.drawer, .overlay').toggleClass("open");
+            navigator.vibrate(11);
+        });
+        $(".overlay").click(function(){$(".hamburger").removeClass("is-active")})
+        $(".nav-item").click(function(){
+            navigator.vibrate(10);
+        });
+        
+        //waves js initialization
+        Waves.attach('.nav-item', ['waves-block','waves-light']);
+        Waves.attach('.social .fa', ['waves-block','waves-light']);
+        Waves.init();
+        
+        
+        document.addEventListener('touchstart', handleTouchStart, false);        
+        document.addEventListener('touchmove', handleTouchMove, false);
+        //document.addEventListener('touchend', handleTouchEnd, false);        
+        var startX = null,                                                        
+        startY = null,
+        startTime = null;
+        function getTouches(evt) {
+            return evt.touches ||             // browser API
+            evt.originalEvent.touches; // jQuery
+        }                                                     
+        
+        function handleTouchStart(evt) {
+            const firstTouch = getTouches(evt)[0];                                      
+            startX = firstTouch.clientX;                                      
+            startY = firstTouch.clientY;     
+            startTime = new Date().getTime();                             
+        };                                                
+        
+        function handleTouchMove(evt) {
+            if ( ! startX || ! startY || ! startTime) {return;}
+            var moveX = evt.touches[0].clientX;                                    
+            var moveY = evt.touches[0].clientY;
+            var moveTime = new Date().getTime();
+            var xDiff = startX - moveX;
+            var yDiff = startY - moveY;
+            var timeDiff =  moveTime - startTime;
+            var t = evt.touches[0].pageX;
+            var touchMove = evt.changedTouches[0].pageX;
+            if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+                if ( xDiff > 0 ) {
+                    // left swipe 
+                    $('.drawer, .overlay').removeClass("open");
+                    $(".hamburger").removeClass("is-active")
+                } else {
+                    // right swipe 
+                    if(startX < 10){
+                        $('.drawer, .overlay').addClass("open");
+                    $(".hamburger").addClass("is-active")
+                    } else if(timeDiff <= 30){
+                        $('.drawer, .overlay').addClass("open");
+                    $(".hamburger").addClass("is-active")
+                    }
+                }                       
+            } 
+            // reset values
+            startX = null;
+            startY = null;                                             
+        }; // HandleTouchMove
+        
+        //hamburger
+        $(".hamburger").click(function(){
+            $(".hamburger").toggleClass("is-active");
+        });
+        var hmbrgr = document.documentElement.style;
+        $(".hamburger").hover(function(){
+            hmbrgr.setProperty('--hamburger-color','#fff');
+        },function(){
+            hmbrgr.setProperty('--hamburger-color','#000');
+        }); // hover has to function mouseenter and mouceleave
+        
+    }); // jquery ended 
+    </script>
+    
+    <script type="text/javascript">
+    //add og:url
+    document.querySelector("meta[property='og:url']").setAttribute("content",window.location.href);
+    </script>
+    </body>
+</html>
