@@ -260,14 +260,17 @@
     }
     .navbar-brand{height:; line-height:;}
     .navbar-brand img{height:100%;}
+    
+    /*if drawer is not over on babbar then remove first line*/
+    .navbar-toggler,
     .navbar-toggler:hover,
     .navbar-toggler:active{
     outline-color: transparent;
-    background-image: var(--gradient-blue); /*linear-gradient(to top right, rgba(3, 17, 85, 1), rgba(24,154,201,1)); */
+    background-image: var(--bg-gradient-blue); /*linear-gradient(to top right, rgba(3, 17, 85, 1), rgba(24,154,201,1)); */
     color:#fff;
     }
     .navbar-collapse .active{background:linear-gradient(to top, green,4px, #fff 4px);}
-    .nav-item:hover{background: var(--gradient-blue); /*linear-gradient(to right, #031155,#189AC9);*/ }
+    .nav-item:hover{background: var(--bg-gradient-blue); /*linear-gradient(to right, #031155,#189AC9);*/ }
     .nav-item a:hover{color:white !important;}
     /*.navbar-collapse{overflow-x:scroll;}*/
     
@@ -315,8 +318,6 @@
     transform:scale(.9);
     border:1px solid #fff;
     }
-    
-    .grad-blue{background:var(--gradient-blue);}
     .nowrap{white-space:nowrap;}
     .bg-black{
     background-color: black;
@@ -468,7 +469,7 @@
     <script src="https://cdn.jsdelivr.net/gh/anshumemorial/files/js/share.js"></script>
     <script type="text/javascript">
     $(function (){
-        $('a').click(function(){navigator.vibrate(10);});
+        $('a').click(function(){navigator.vibrate(11);});
         
         $('<div class="drawer d-md-none" ></div>').appendTo("body");
         $("<div class='profile-box'><div class='profile-pic'></div></div>").appendTo(".drawer")
@@ -481,9 +482,7 @@
         navigator.vibrate(11);
         });
         $(".overlay").click(function(){$(".hamburger").removeClass("is-active")})
-        $(".nav-item").click(function(){
-        navigator.vibrate(10);
-        });
+        //$(".nav-item").click(function(){navigator.vibrate(10);});
         
         //waves js initialization
         Waves.attach('.nav-item', ['waves-block','waves-light']);
@@ -544,12 +543,17 @@
         $(".hamburger").click(function(){
             $(".hamburger").toggleClass("is-active");
         });
+        
+        //if drawer is not over nav then comment first line and I comment commented below code
         var hmbrgr = document.documentElement.style;
-        $(".hamburger").hover(function(){
+        hmbrgr.setProperty('--hamburger-color','#fff');
+        
+        /*$(".hamburger").hover(function(){
             hmbrgr.setProperty('--hamburger-color','#fff');
         },function(){
             hmbrgr.setProperty('--hamburger-color','#000');
         }); // hover has to function mouseenter and mouceleave
+        */
         
     }); // jquery ended 
     </script>
