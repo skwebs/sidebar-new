@@ -58,7 +58,7 @@
     <style type="text/css">
     :root{
     --hamburger-color:#000;
-    --gradient-blue:linear-gradient(to top right, rgba(3, 17, 85, 1), rgba(24,154,201,1));
+    --bg-gradient-blue:linear-gradient(to top right, rgba(3, 17, 85, 1), rgba(24,154,201,1));
     }
     /*
     |-----------------------------------------
@@ -79,8 +79,6 @@
     */
     html{
     height: 100%;
-    color: #F3F4F5;
-    background-color: #EFEFEF;
     }
     body{
     display: flex;
@@ -268,11 +266,11 @@
     .navbar-toggler:hover,
     .navbar-toggler:active{
     outline-color: transparent;
-    background-image: var(--gradient-blue); /*linear-gradient(to top right, rgba(3, 17, 85, 1), rgba(24,154,201,1)); */
+    background-image: var(--bg-gradient-blue); /*linear-gradient(to top right, rgba(3, 17, 85, 1), rgba(24,154,201,1)); */
     color:#fff;
     }
     .navbar-collapse .active{background:linear-gradient(to top, green,4px, #fff 4px);}
-    .nav-item:hover{background: var(--gradient-blue); /*linear-gradient(to right, #031155,#189AC9);*/ }
+    .nav-item:hover{background: var(--bg-gradient-blue); /*linear-gradient(to right, #031155,#189AC9);*/ }
     .nav-item a:hover{color:white !important;}
     /*.navbar-collapse{overflow-x:scroll;}*/
     
@@ -384,7 +382,7 @@
     | common css that apply anywhere
     |-----------------------------------------
     */
-    .grad-blue{background:var(--gradient-blue);}
+    .grad-blue{background:var(--bg-gradient-blue);}
     .nowrap{white-space:nowrap;}
     
     .bg-half-black{background-color: rgba(0,0,0,.1);}
