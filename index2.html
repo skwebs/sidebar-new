@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<meta name="theme-color" content="teal" >
+	<link rel="icon" type="image/png" href="https://i.ibb.co/DVpqNCK/gci-favicon-64.png" sizes="16x16,32x32,64x64" >
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css" integrity="sha256-a2tobsqlbgLsWs7ZVUGgP5IvWZsx8bTNQpzsqCSm5mk=" crossorigin="anonymous" />
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
+	<script sex="https://cdn.jsdelivr.net/npm/universal-parallax@1.3.2/dist/universal-parallax.min.js"></script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.min.js"></script>
+	
+	<title>:: Home | SKWebs Services ::</title>
+    <style type="text/css">
+    :root{
+    --grad-blue:linear-gradient(10deg, #000749 20%, #1CB1FB);
+    }
+    /* -------------------------------- 
+    Primary style
+    -------------------------------- */
+    *, *::after, *::before {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    }
+    
+    /* nav */
+    nav{
+    box-shadow: 0 0 5px 2px rgba(0,0,0,.2);
+    }
+    .navbar-brand img{
+    height:30px !important;
+    }
+    .pageWrap{
+    overflow-x:hidden;
+    }
+    .navbar-toggler:hover,.navbar-toggler:active,.navbar-toggler:focus{outline:none;}
+    /*.pageWrap > div*/
+    /*section {padding-top:60px;}*/
+    .contentBoxWrap{
+    width:100%;
+    min-height:100vh;
+    }
+    .contentBox{
+    width:100%;
+    }
+    .content{
+    height:200px;
+    overflow-y:hidden;
+    text-align:justify;
+    }
+    /*.wow{
+    visibility:hidden;
+    }*/
+    
+    /* data-aos */
+    [data-aos] {
+    visibility: hidden;
+    }
+    [data-aos].animated {
+    visibility: visible;
+    }
+    /*
+    |-----------------------------------------
+    | footer css (All footer CSS here)
+    |-----------------------------------------
+    */
+    .copyright {
+    background:rgba(0,0,0,.2);
+    color:grey;
+    }
+    #more-links a{
+    margin:5px 10px;
+    display:inline-block;
+    color:grey;
+    text-decoration:none;
+    transition:.5s;
+    }
+    #more-links a:hover{
+    color:#fff;
+    transform:translateX(3px);
+    }
+    .social{flex-direction:row !important;color:grey;}
+    .social ul{
+    margin:0 5px;
+    padding:0;
+    display:flex;
+    }
+    .social ul li{
+    list-style:none;
+    margin:0 5px;
+    }
+    .social ul li a{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:40px;
+    height:40px;
+    /*border-radius:50%;*/
+    text-decoration:none;
+    font-size:1.25rem;
+    color:#fff;
+    transition:all .5s;
+    }
+    
+    .social ul li a .fa{
+    transition:.5s;
+    }
+    .social ul li a:hover{
+    border:1px solid #fff;
+    border-radius:50%;
+    }
+    .social ul li a:hover .fa{
+    color:#fff;
+    transform:scale(.85);
+    }
+    
+    /* active */
+    .active{
+    background-image:linear-gradient(10deg, #000749 20%, #1CB1FB);
+    padding:0 12px;border-radius:5px;
+    font-weight:bold;
+    }
+    .active a{color:#fff !important;}
+    
+    .center-center{display:flex;flex-direction: column;justify-content: center;align-items:center;}
+    
+    /* color platelets */
+    .bg-grad-blue{background-image:var(--grad-blue);}
+    .bg-grad-orange{background-image:linear-gradient(10deg, #BA2B60,30%, #FBA939);}
+    .bg-grad-teal{background-image:linear-gradient(to right top, #006161, #00c7c7);}
+    
+    /* animation delay classes */
+    .delay-0s1{animation-delay:0.1s;}
+    .delay-0s2{animation-delay:0.2s;}
+    .delay-0s3{animation-delay:0.3s;}
+    .delay-0s4{animation-delay:0.4s;}
+    .delay-0s5{animation-delay:0.5s;}
+    .delay-0s6{animation-delay:0.6s;}
+    .delay-0s7{animation-delay:0.7s;}
+    .delay-0s8{animation-delay:0.8s;}
+    .delay-0s9{animation-delay:0.9s;}
+    .delay-1s5{animation-delay:1.5s;}
+    .delay-2s5{animation-delay:2.5s;}
+    .delay-3s5{animation-delay:3.5s;}
+    .delay-4s5{animation-delay:4.5s;}
+    .delay-5s5{animation-delay:5.5s;}
+    
+    /*
+    |-----------------------------------------
+    | common css that apply anywhere
+    |-----------------------------------------
+    */
+    .grad-blue{background:var(--bg-gradient-blue);}
+    .nowrap{white-space:nowrap;}
+    
+    .bg-half-black{background-color: rgba(0,0,0,.1);}
+    .bg-black{background:#000;}
+    .text-lightgrey{color:lightgrey;}
+    .share{
+    position:fixed;
+    background:rgba(255,255,255,.05);
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    right:25px;
+    bottom:100px;
+    box-shadow:0 0 10px rgba(0,0,0,.5),0 0 25px rgba(0,0,0,.05);
+    color:rgba(0,0,0,.3);
+    z-index:1200;
+    }
+    .font-1-1rem{font-size:1.1rem;}
+    .font-1-2rem{font-size:1.2rem;}
+    .font-1-3rem{font-size:1.3rem;}
+    .font-1-4rem{font-size:1.4rem;}
+    .font-1-5rem{font-size:1.5rem;}
+    .font-1-6rem{font-size:1.6rem;}
+    .font-1-7rem{font-size:1.7rem;}
+    .font-1-8rem{font-size:1.8rem;}
+    .font-1-9rem{font-size:1.9rem;}
+    .font-2-0rem{font-size:2.0rem;}
+    
+    /**
+    * Backgrounds
+    */
+    .backgrounds {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: -1; }
+    .backgrounds .background {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-attachment: fixed; }
+    
+    .overlay:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: #000;
+    opacity: 0.8; }
+    
+    </style>
+  </head>
+  <body>
+    <div class="backgrounds overlay">
+    <div class="background" data-aos="fadeIn" data-aos-duration="1500" data-aos-anchor=".section--hero" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQDwtxOKb9s9KVaQ9UdFt9gofS5qL1JvHmBwKSG60-QTtSGgnvH');"></div>
+    </div>
+    
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+	    <a class="navbar-brand" href="./" data-aos="bounceInRight" >
+		   <!-- <img src="https://i.ibb.co/3C2L76s/gl3.jpg" >-->
+		   <img src="https://i.ibb.co/qyQZ8dT/SKWebs.png" >
+		   
+	    </a>
+	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	    </button>
+	    
+	    <div class="collapse navbar-collapse p-0 pt-2" id="navContent">
+		    <ul class="navbar-nav p-0 ml-auto">
+			    <li class="nav-item active">
+				    <a class="nav-link" href="#welcome">Welcome <span class="sr-only">(current)</span></a>
+			    </li>
+			    <li class="nav-item">
+				    <a class="nav-link" href="#about">About Us</a>
+			    </li>
+			    <li class="nav-item">
+				    <a class="nav-link" href="#contact">Contact Us</a>
+			    </li>
+			    <li class="nav-item">
+				    <a class="nav-link" href="#developer">Developer</a>
+			    </li>
+			    <li class="nav-item">
+				    <a class="nav-link" href="#more-links">More Links</a>
+			    </li>
+			    
+		    </ul>
+	    </div>
+    </nav>
+    
+    <div class="pageWrap" >
+    
+    <section id="welcome" data-aos="fadeIn" class="contentBoxWrap" >
+	    <div class="contentBox p-3" >
+		    <p class="h3 p-2 bg-grad-blue text-center text-light rounded " >Welcome</p>
+		    <p tyle="background:url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQDwtxOKb9s9KVaQ9UdFt9gofS5qL1JvHmBwKSG60-QTtSGgnvH')"  class="font-1-3rem p-5 border rounded text-light" >Welcome in SKWebs. I am Satish, creator of this page. I like to learn code and create something new on new idea.
+		    </p>
+		    
+		    <!--
+		    <div class="row" >
+			    <div class="col-md-6 p-3 d-none d-md-block" >
+				    <div class="container px-4 py-2 text-center border rounded" data-aos="fadeIn">
+					    <p class="h4 p-2">Heading</p>
+					    <p class="content delay-0s3" data-aos="fadeIn">
+						    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+					    </p>
+				    </div>
+			    </div>
+			    <div class="col-md-6 p-3" >
+				    <div class="container px-4 py-2 text-center border rounded" data-aos="fadeIn" data-aos-delay="0">
+					    <p class="h4 p-2" >Heading</p>
+					    <p class="content" data-aos="fadeIn delay-0s3">
+						    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+					    </p>
+				    </div>
+			    </div>
+		    </div>
+		    -->
+
+	    </div>
+    </section>
+    
+    <section id="about" data-aos="fadeIn" class="contentBoxWrap" >
+    <div class="contentBox p-3" >
+    <p class="h3 p-2 bg-grad-blue text-center text-light rounded " >About Us</p>
+    <div class="row" >
+    <div class="col-md-6 p-3" >
+    <div class="container px-4 py-2 text-center border rounded " data-aos="fadeIn" data-aos-delay="300">
+    <p class="h4 p-2" >Heading</p>
+    <p class="content" data-aos="fadeIn delay-0s3">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+    </p>
+    </div>
+    </div>
+    <div class="col-md-6 p-3" >
+    <div class="container px-4 py-2 text-center border rounded" data-aos="fadeIn" data-aos-delay="0">
+    <p class="h4 p-2" >Heading</p>
+    <p class="content" data-aos="fadeIn delay-0s3">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+    </p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    
+    <section id="contact" data-aos="fadeIn" class="contentBoxWrap" >
+    <div class="contentBox p-3" >
+    <p class="h3 p-2 bg-grad-blue text-center text-light rounded " >Contact Us</p>
+    <div class="row" >
+    <div class="col-md-6 p-3" >
+    <div class="container px-4 py-2 text-center border rounded " data-aos="fadeIn" >
+    <p class="h4 p-2" >Heading</p>
+    <p class="content" data-aos="fadeIn delay-0s3">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+    </p>
+    </div>
+    </div>
+    <div class="col-md-6 p-3" >
+    <div class="container px-4 py-2 text-center border rounded" data-aos="fadeIn" data-aos-delay="0">
+    <p class="h4 p-2" >Heading</p>
+    <p class="content" data-aos="fadeIn delay-0s3">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+    </p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    
+    <section id="developer" data-aos="fadeIn" class="contentBoxWrap" >
+    <div class="contentBox p-3" >
+    <p class="h3 p-2 bg-grad-blue text-center text-light rounded " >Developer</p>
+    <div class="row" >
+    <div class="col-md-6 p-3" >
+    <div class="container px-4 py-2 text-center border rounded " data-aos="fadeIn" data-aos-delay="300">
+    <p class="h4 p-2" >Heading</p>
+    <p class="content" data-aos="fadeIn delay-0s3">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+    </p>
+    </div>
+    </div>
+    <div class="col-md-6 p-3" >
+    <div class="container px-4 py-2 text-center border rounded" data-aos="fadeIn" data-aos-delay="0">
+    <p class="h4 p-2" >Heading</p>
+    <p class="content" data-aos="fadeIn delay-0s3">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
+    </p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    
+    <i class="share center-center fa fa-share-alt fa-2x" ></i>
+    
+    <footer data-aos="fadeIn faster" data-aos-offset="0" class="footer bg-dark" >
+	    <div class="py-1 bg-primary" >
+		    <div class="container text-light social center-center" >
+			    <ul class="d-none d-md-flex" > <li>Follow us on : </li></ul>
+			    <ul>
+				    <li class="fb" ><a href="https://fb.com/skwebsofficial/" ><i class="fa fa-facebook" ></i></a></li>
+				    <li class="tw" ><a href="https://twitter.com/SatishKmrSharma/" ><i class="fa fa-twitter" ></i></a></li>
+				    <li class="ig" ><a href="https://instagram.com/satishkmrsharma/" ><i class="fa fa-instagram" ></i></a></li>
+				    <li class="yt" ><a href="#!" ><i class="fa fa-youtube" ></i></a></li>
+			    </ul>
+		    </div>
+	    </div>
+	    <hr class="m-0 bg-half-black" >
+	    <div id="more-links" class="container py-3" >
+		    <a href="#!">Facebook</a>
+		    <a href="#!" >Twitter</a>
+		    <a href="#!" >Email</a>
+		    <a href="#!" >Call</a>
+		    
+	    </div>
+	    <div data-aos="fadeIn" data-aos-offset="0" class="copyright my-auto py-3 text-center " >
+		    &copy<script>document.write(new Date().getFullYear())</script> <a class="text-lightgrey mr-md-5" href="./" ><b>S.K. Web Services</b>.</a><span class="d-none d-md-inline" >All Right Reserved.</span>
+		    <!--<hr class="d-md-none bg-half-black" >
+		    Designed & Developed by <strong><a href="https://skwebs.github.io" data-aos="pulse infinite" data-aos-offset="0" class="d-inline-block border border-primary rounded px-1" >S.K.Webs</a></strong> <!--<a href="https://facebook.com/skwebsofficial" class="nowrap border border-primary rounded px-1 d-inline-block" >S.K.Sharma <i class="fa fa-facebook-square" ></i></a>
+		    -->
+	    </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript">
+	$(()=>{
+		//menu collapse after clicking menu or other bpdy
+		$(".pageWrap, .nav-item").click(()=>{
+			$("#navContent").collapse('hide');
+		})
+		
+		//set padding top of nav height
+		$('.pageWrap').css('padding-top',$('nav').outerHeight());
+		//$('section').css('padding-top',$('nav').outerHeight());
+		
+		
+		
+		//var scrollLink = $('.scroll');
+		var scrollLink = $('.nav-link');
+		
+		// Smooth scrolling
+		scrollLink.click(function(e) {
+		e.preventDefault();
+			$('body,html').animate({
+				scrollTop: ($(this.hash).offset().top - 57 //$("nav").outerHeight()
+				)
+			}, 1000 );
+		});
+		
+		// Active link switching
+		$(window).scroll(function() {
+			var scrollbarLocation = $(this).scrollTop();
+			scrollLink.each(function() {
+				var sectionOffset = $(this.hash).offset().top - 60; //20;
+				if ( sectionOffset <= scrollbarLocation ) {
+					$(this).parent().addClass('active');
+					$(this).parent().siblings().removeClass('active');
+				}
+			})
+		})
+		
+	}); //jquery ready	
+    
+    //initialization
+    wow = new WOW({
+	    boxClass:     'wow',      // default
+	    animateClass: 'animated', // default
+	    offset:       120,          // default
+	    mobile:       true,       // default
+	    live:         true        // default
+    })
+    //wow.init(); //disabled by comment
+    
+    var option={
+	    useClassNames: true,
+	    initClassName: false,
+	    animatedClassName: 'animated'
+    };
+    AOS.init(option);
+    
+    
+    
+    /*
+    //way point with class
+    var boxWrap = $(".contentBoxWrap");
+    boxWrap.waypoint(function(direction){
+    if(direction=='down'){
+    $(this[0,'element']).css('padding-top',$('nav').outerHeight());
+    }else{
+    $(this[0,'element']).css('padding-top',0);
+    }
+    },{offset:0});
+    */
+    
+    /*
+    $('section').waypoint(function(direction) {
+    var activeSection = $(this).next();
+    var activeSection = $(this);
+    if(direction === 'down'){
+    activeSection = $(this).next();
+    }
+    const navHeight = $('nav').outerHeight();
+    activeSection = $(this);
+    var sectionId   = this.element.id; //activeSection.attr('id');
+    $('ul li').removeClass('active');
+    //$('ul li.' + sectionId).addClass('active');
+    $('a[href*=\\#'+sectionId+']').parent().addClass('active');
+    console.log(activeSection);
+    console.log(this.element.id);
+    $("#navId").html(sectionId);
+    },{offset: $("nav").outerHeight()});*/
+    
+    /*$('a[href*=\\#]:not([href=\\#])').click(function() {
+    $("#navContent").collapse('hide');
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+    || location.hostname == this.hostname) {
+    
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+    if (target.length) {
+    $('html,body').animate({
+    scrollTop: target.offset().top - 56 //(target.height() / 5)
+    }, 600);
+    
+    return false;
+    }
+    }
+    });
+    */
+    
+    </script>
+  </body>
+</html>
