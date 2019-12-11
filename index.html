@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<meta name="theme-color" content="#0c5ca2" >
+	<link rel="icon" type="image/png" href="https://i.ibb.co/DVpqNCK/gci-favicon-64.png" sizes="16x16,32x32,64x64" >
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css" integrity="sha256-a2tobsqlbgLsWs7ZVUGgP5IvWZsx8bTNQpzsqCSm5mk=" crossorigin="anonymous" />
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link href="css/skwebs.css" rel="stylesheet" type="text/css" >
+	<!--unused css
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+	-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/marrio-h/universal-parallax/dist/universal-parallax.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.min.js"></script>
+	<!--
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" crossorigin="anonymous"></script>
+	-->
+	<title>:: Home | SKWebs Services ::</title>
+    <style type="text/css">
+    {border:thin solid magenta;}
+    .contentBox{animation:hue 60s linear infinite;}
+    .parallax__container + div{background:#fff;}
+    /*html{font-size:20px;}*/
+    .parallax__container{
+    height:150px;
+    }
+    #debug{
+    display:none;
+    position:fixed;
+    top:50%;
+    left:0;
+    padding:5px;
+    background:#000;
+    color:#fff;
+    z-index:1000;
+    width:100%;
+    }
+    .cont{color:inherit;}
+    .bg-img{background:url("https://i.ibb.co/kJs58ht/photo-1460925895917-afdab827c52f.jpg");}
+    </style>
+  </head>
+  <body>
+  <p id="debug" ></p>
+    <!--<div class="backgrounds overlay">
+    <div class="background" data-aos="fadeIn" data-aos-duration="1500" data-aos-anchor=".section--hero" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQDwtxOKb9s9KVaQ9UdFt9gofS5qL1JvHmBwKSG60-QTtSGgnvH');"></div>
+    </div>
+    -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+	    <a class="navbar-brand" href="./" data-aos="bounceInRight" >
+		   <!-- <img src="https://i.ibb.co/3C2L76s/gl3.jpg" >--
+		   <img src="https://i.ibb.co/qyQZ8dT/SKWebs.png" >
+		   <!--<img src="https://i.ibb.co/k6Mw8Dm/skwebs-o.png" >
+		   --
+		   <img src="https://i.ibb.co/PwYPVRF/skwebs-bw.png" >
+		   -->
+		   <img src="https://i.ibb.co/VBf9jFV/skwebs-64-34.png" >
+	    </a>
+	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	    </button>
+	    
+	    <div class="collapse navbar-collapse p-0 pt-2" id="navContent">
+		    <ul class="navbar-nav p-0 ml-auto">
+			    <li class="nav-item active">
+				    <a class="nav-link" href="#welcome">Welcome <span class="sr-only">(current)</span></a>
+			    </li>
+			    <li class="nav-item">
+				    <a class="nav-link" href="#about">About Us</a>
+			    </li>
+			    <li class="nav-item">
+				    <a class="nav-link" href="#contact">Contact Us</a>
+			    </li>
+			    <li class="nav-item">
+				    <a class="nav-link" href="#example">Example</a>
+			    </li>
+			    <li class="nav-item">
+				    <a class="nav-link" href="#more-links">More Links</a>
+			    </li>
+			    
+		    </ul>
+	    </div>
+    </nav>
+    <div class="row m-0 " >
+    <div class="col-md-8 offset-md-2 pageWrap overflow-x-hidden" >
+    
+    <section id="welcome" class="pt-3" >
+    <div class="parallax__container" >
+	    <div class=" w-100 h-100 p-3 center-center" >
+	    <p data-aos="fadeIn" class="h3 p-3 bg-grad-blue text-center text-light rounded w-100" >Welcome</p>
+	    </div>
+	    <div class="parallax bg-img"></div>
+    </div>
+    
+    <div data-aos="fadeIn" class="contentBoxWrap" >
+	    <div class="contentBox py-4" >
+		    <p class="vp p-4 font-1-3rem bg-grad-blue text-light rounded text-justify" data-aos="fadeIn delay-0s6">
+		    	Welcome in SKWebs. Here you get some good idea with code and their example based on my creative idea for beginners
+				that can you use in your project. And you also get some selected useful plugin that make your project unique.
+			</p>
+		    
+	    </div>
+    </div>
+    </section>
+    
+    
+    <section id="about" >
+    <div class="parallax__container" >
+    <div class=" w-100 h-100 p-3 center-center" >
+    <p data-aos="fadeIn" class="h3 p-3 bg-grad-blue text-center text-light rounded w-100" >About Us</p>
+    </div>
+    <div class="parallax bg-img"></div>
+    </div>
+    
+    <div data-aos="fadeIn" class="contentBoxWrap" >
+    <div class="contentBox py-4" >
+    <span class="vpt" ></span>
+    <p class="vp p-4 font-1-3rem rounded text-justify" data-aos="fadeIn delay-0s6">
+    Hi, I am Satish. I have knowledge and experience of front-end language as like <b>html, CSS, JavaScript</b> and back-end script <b>php, MySQL</b> with <b> Object Oriented Programme (OPP) Concept</b> and also have 
+    knowledge of frameworks as like <b>Bootstrap, jquery</b> and another useful <b>PHP Libraries</b>. I like to create something new and I always curious about learn and use new things.
+    </p>
+    
+    </div>
+    </div>
+    </section>
+    
+   <section id="contact" >
+   <div class="parallax__container" >
+   <div class=" w-100 h-100 p-3 center-center" >
+   <p data-aos="fadeIn" class="h3 p-3 bg-grad-blue text-center text-light rounded w-100" >Contact Us</p>
+   </div>
+   <div class="parallax bg-img"></div>
+   </div>
+   
+   <div data-aos="fadeIn" class="contentBoxWrap" >
+   <div class="contentBox py-4" >
+   <span class="vpt" ></span>
+   <p class="vp p-3 p-md-3 font-1-2rem rounded text-justify" data-aos="fadeIn delay-0s6">
+   Email : <a class="cont"  href="mailto:skwebservices@gmail.com" >skwebservices@gmail.com</a><br>
+   Connect on : <a class="cont border px-1 rounded"  href="https://facebook.com/satishkumarsharma05/" >Facebook</a><br>
+   Connect on : <a class="cont border px-1 rounded" href="https://m.me/sks555sk" >Messenger</a><br>
+   
+   </p>
+   
+   </div>
+   </div>
+   </section>
+   
+   
+   <section id="example" >
+   <div class="parallax__container" >
+   <div class=" w-100 h-100 p-3 center-center" >
+   <p data-aos="fadeIn" class="h3 p-3 bg-grad-blue text-center text-light rounded w-100" >Example</p>
+   </div>
+   <div class="parallax bg-img"></div>
+   </div>
+   
+   <div data-aos="fadeIn" class="contentBoxWrap" >
+   <div class="contentBox py-4" >
+   <span class="vpt" ></span>
+   <p class="vp p-4 font-1-3rem rounded text-justify" data-aos="fadeIn delay-0s6">
+   I have made some example of sidebar menu.
+   <br>
+   <u><a class="cont" href="#" >Demo - Sidebar Menu</a>
+   <br>
+   <a class="cont" href="#" >Demo - Sidebar with image</a>
+   </p></u>
+   
+   </div>
+   </div>
+   </section>
+   
+   </div> <!-- overflow-x-hidden -->
+   
+   </div> <!-- row -->
+   
+   
+   
+   
+   
+    <style type="text/css">
+    .devContBox{
+    width:100%;
+    margin:0 auto;
+    height:350px;
+    border-radius:5px;
+    /*background:rgba(0,0,0,.05);*/
+    overflow:hidden;
+    order:1px solid grey;
+    box-shadow:0 0 15px 10px rgba(0,0,0,.25);
+    transform:translateZ(10px);
+    }
+    .devContBox > div:first-child {
+    width: 100%;
+    height:30%;
+    transition:all 3s;
+    background-image:linear-gradient(to top right, blue, magenta);
+    /*background-image:linear-gradient(to top right, #000749 20%, #1CB1FB);
+    */
+    }
+    .devContBox > div:last-child {
+    width: 100%;
+    height:70%;
+    border-radius:0px;
+    }
+    .circle {
+    width:120px;
+    height:120px;
+    border:5px solid #fff;
+    border-radius:50%;
+    position:absolute;
+    left:50%;
+    margin-top:-15px;
+    transform:translate(-50%, -50%);
+    background:grey;
+    background-image:url("https://anshumemorial.in/old/img/sk-m.jpg");
+    background-position:center;
+    background-size:cover;
+    }
+    .hr {
+    border: none;
+    margin:0;
+    height: 1px;
+    background-color: #c0c8c9;
+    background-image: linear-gradient(to right, #ffffff 0%,#c0c8c9 50%,#ffffff 100%);
+    }
+    .devContBox p{
+    font-size:1.2rem;
+    color:grey;
+    }
+    .p-2{
+    padding:0 5px;
+    }
+    .mt-7{margin-top:4rem !important;}
+    .bg-0{background:rgba(0,0,0,0);}
+    .visible-none{visibility:hidden;}
+    </style>
+    
+    
+    
+    
+    
+    
+    <i class="share center-center fa fa-share-alt fa-2x" ></i>
+    
+    <footer data-aos="fadeIn faster" data-aos-offset="0" class="footer bg-dark" >
+	    <div class="py-1 bg-primary" >
+		    <div class="container text-light social center-center" >
+			    <ul class="d-none d-md-flex" > <li>Follow us on : </li></ul>
+			    <ul>
+				    <li class="fb" ><a href="https://fb.com/skwebsofficial/" ><i class="fa fa-facebook" ></i></a></li>
+				    <li class="tw" ><a href="https://twitter.com/SatishKmrSharma/" ><i class="fa fa-twitter" ></i></a></li>
+				    <li class="ig" ><a href="https://instagram.com/satishkmrsharma/" ><i class="fa fa-instagram" ></i></a></li>
+				    <li class="yt" ><a href="#!" ><i class="fa fa-youtube" ></i></a></li>
+			    </ul>
+		    </div>
+	    </div>
+	    <hr class="m-0 bg-half-black" >
+	    <div id="more-links" class="container py-4" >
+		    <a href="mailto:skwebservices@gmail.com" >Email</a>
+		    <a href="https://facebook.com/satishkumarsharma05">Facebook</a>
+		    <a href="https://m.me/sks555sks" >Messenger</a>
+		    
+	    </div>
+	    <div data-aos="fadeIn" data-aos-offset="0" class="copyright my-auto py-4 text-center " >
+		    &copy<script>document.write(new Date().getFullYear())</script> <a class="text-lightgrey mr-md-5" href="./" ><b>S.K. Web Services</b>.</a><span class="d-none d-md-inline" >All Right Reserved.</span>
+		    <!--<hr class="d-md-none bg-half-black" >
+		    Designed & Developed by <strong><a href="https://skwebs.github.io" data-aos="pulse infinite" data-aos-offset="0" class="d-inline-block border border-primary rounded px-1" >S.K.Webs</a></strong> <!--<a href="https://facebook.com/skwebsofficial" class="nowrap border border-primary rounded px-1 d-inline-block" >S.K.Sharma <i class="fa fa-facebook-square" ></i></a>
+		    -->
+	    </div>
+    </footer>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="devModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content bg-0">
+    
+	    <div class="devContBox bg-light " >
+	    <div>
+	    </div>
+	    <div>
+		    <div class="circle" ></div>
+			    <div class="text-center" >
+				    <hr class="visible-none" >
+				    <p class="mt-7" >SATISH SHARMA (Developer)</p>
+				    <hr class="hr" >
+			    <div class="p-2" ><p>This is v1.0.0 version website. Upgraded v2.0.0 version website will be launch very soon.</p></div>
+		    </div>
+	    </div>
+	    </div>
+	    
+    </div>
+    </div>
+    </div>
+    
+    
+    
+    
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/skwebs.js"></script>
+    <script type="text/javascript">
+    </script>
+  </body>
+</html>
