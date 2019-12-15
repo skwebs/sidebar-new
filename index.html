@@ -16,8 +16,6 @@
     <link href="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io/css/universal-parallax.min.css?v1.3.2" rel="stylesheet" type="text/css" >
     <!-- fontawrsome css -->
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <!-- skwebs css -->
-    <link href="css/skwebs.css" rel="stylesheet" type="text/css" >
     
 	<!-- Modernizr js -->
 	<script src="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io/js/modernizr-2.8.3.min.js"></script>
@@ -44,6 +42,14 @@
     height:30px !important;
     animation:hue 6s linear infinite;
     }
+    
+    /* active */
+    .active{
+    background-image:linear-gradient(10deg, #000749 20%, #1CB1FB);
+    padding:0 12px;border-radius:5px;
+    font-weight:bold;
+    }
+    .active a{color:#fff !important;}
     
     /* animation */
     @keyframes hue{
@@ -171,13 +177,13 @@
 				    <a class="nav-link" href="#welcome">Welcome <span class="sr-only">(current)</span></a>
 			    </li>
 			    <li class="nav-item">
+				    <a class="nav-link" href="#about">About Us</a>
+			    </li>
+			    <li class="nav-item">
 				    <a class="nav-link" href="#demo">Demo</a>
 			    </li>
 			    <li class="nav-item">
 				    <a class="nav-link" href="#plugins">Plugin</a>
-			    </li>
-			    <li class="nav-item">
-				    <a class="nav-link" href="#about">About Us</a>
 			    </li>
 			    <li class="nav-item">
 				    <a class="nav-link" href="#contact">Contact Us</a>
@@ -202,9 +208,19 @@
     <div class="parallax bg-img"></div>
     </section>
     
+    <section id="about" class="parallax__container p-4 bg-info" >
+    <div data-aos="fadeInRight" class="bg-op-3 p-3 rounded w-100 p-4 text-light" >
+    <p data-aos="fadeInDown delay-1s" class="h3 text-center border rounded p-2 mb-4" >About Us</p>
+    <p data-aos="fadeInUp delay-1-5s">Hi, I am Satish. I have knowledge and experience of front-end language as like <b>html, CSS, JavaScript</b> and back-end script <b>php, MySQL</b> with <b> Object Oriented Programme (OPP) Concept</b> and also have 
+    knowledge of frameworks as like <b>Bootstrap, jquery</b> and another useful <b>PHP Libraries</b>. I like to create something new and I always curious about learn and use new things.
+    </p>
+    </div>
+    <div class="parallax"></div>
+    </section>
+    
     
     <section id="demo" class="parallax__container p-4 bg-primary" >
-    <div data-aos="bounceInRight" class="bg-op-3 p-3 rounded w-100 p-4 text-light" >
+    <div data-aos="bounceInRight" class="bg-op-6 p-6 rounded w-100 p-4 text-light" >
     <p data-aos="bounceInDown delay-1s" class="h3 text-center border rounded p-2 mb-4" >Demo</p>
     <p data-aos="bounceInUp delay-1-5s">I have made some example of sidebar menu.
     <br>
@@ -214,12 +230,12 @@
     </u>
     </p>
     </div>
-    <div class="parallax"></div>
+    <div class="parallax" data-parallax-image="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io/img/skwebRound.png"></div>
     </section>
     
     
     <section id="plugins" class="parallax__container p-4 bg-success" >
-    <div data-aos="zoomIn" class="bg-op-6 p-3 rounded w-100 p-4 text-light" >
+    <div data-aos="zoomIn" class="bg-op-3 p-3 rounded w-100 p-4 text-light" >
     <p data-aos="bounceInDown delay-1s" class="h3 text-center border rounded p-2 mb-4" >Plugins</p>
     <p data-aos="bounceInUp h5 delay-1-5s">The framework/plugins that I used in this project.</p>
     <p data-aos="bounceInUp delay-2s" >
@@ -234,19 +250,10 @@
     5. <a class="cont" href="#" >universal-parallax</a>
     </p>
     </div>
-    <div class="parallax" data-parallax-image="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io/img/skwebRound.png"></div>
+    <div class="parallax" data-parallax-image=""></div>
     </section>
     
     
-    <section id="about" class="parallax__container p-4 bg-info" >
-    <div data-aos="fadeInRight" class="bg-op-3 p-3 rounded w-100 p-4 text-light" >
-    <p data-aos="fadeInDown delay-1s" class="h3 text-center border rounded p-2 mb-4" >About Us</p>
-    <p data-aos="fadeInUp delay-1-5s">Hi, I am Satish. I have knowledge and experience of front-end language as like <b>html, CSS, JavaScript</b> and back-end script <b>php, MySQL</b> with <b> Object Oriented Programme (OPP) Concept</b> and also have 
-    knowledge of frameworks as like <b>Bootstrap, jquery</b> and another useful <b>PHP Libraries</b>. I like to create something new and I always curious about learn and use new things.
-    </p>
-    </div>
-    <div class="parallax"></div>
-    </section>
     
     <section id="contact" class="parallax__container p-4 bg-info" >
     <div data-aos="bounceInLeft" class="bg-op-6 p-3 rounded w-100 p-4 text-light" >
@@ -293,7 +300,6 @@
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/skwebs-local-p.j"></script>
     <script>
     //protect image script
     $(document).ready(function () {
