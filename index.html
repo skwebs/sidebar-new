@@ -8,34 +8,50 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<meta name="theme-color" content="#0c5ca2" >
 	<link rel="icon" type="image/png" href="https://i.ibb.co/xfPgFDq/skwebs-3-88.png" sizes="16x16,32x32,64x64" >
-    
     <!-- bootstrap css -->
-    <link href="css/bootstrap-4.4.1.min.css" rel="stylesheet" type="text/css" >
+    <link href="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io/css/bootstrap-4.4.1.min.css" rel="stylesheet" type="text/css" >
     <!-- animate css  -->
-    <link href="css/animate-3.7.2.css" rel="stylesheet" type="text/css" >
+    <link href="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io/css/animate-3.7.2.css" rel="stylesheet" type="text/css" >
     <!-- universal-parallax css  -->
-    <link href="css/universal-parallax.min.css?v1.3.2" rel="stylesheet" type="text/css" >
+    <link href="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io/css/universal-parallax.min.css?v1.3.2" rel="stylesheet" type="text/css" >
+    <!-- fontawrsome css -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- skwebs css -->
     <link href="css/skwebs.css" rel="stylesheet" type="text/css" >
     
 	<!-- Modernizr js -->
-	<script src="js/modernizr-2.8.3.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io/js/modernizr-2.8.3.min.js"></script>
 	<!-- jQuery js -->
-	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io/js/jquery-3.4.1.min.js"></script>
 	<!-- popper js -->
-	<script src="js/popper-1.16.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io/js/popper-1.16.0.min.js"></script>
 	<!-- bootstrap js -->
-	<script src="js/bootstrap-4.4.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io/js/bootstrap-4.4.1.min.js"></script>
 	<!-- universal parallax js -->
-	<script src="js/universal-parallax.min.js?v1.3.2"></script>
+	<script src="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io/js/universal-parallax.min.js?v1.3.2"></script>
 	<!-- waypoints js -->
-	<script src="js/jquery.waypoints-4.0.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io/js/jquery.waypoints-4.0.0.min.js"></script>
 	<!-- aos-3.0.0-beta-6 js -->
-	<script src="js/aos-3.0.0-beta-6.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io/js/aos-3.0.0-beta-6.min.js"></script>
+	<!-- share js -->
+	<script src="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io/js/share.js"></script>
 	
 	
 	<title>:: Home | SKWebs Services ::</title>
     <style type="text/css">
+    /* nav */
+    .navbar-brand img{
+    height:30px !important;
+    animation:hue 6s linear infinite;
+    }
+    
+    /* animation */
+    @keyframes hue{
+    0%{filter:hue-rotate(0deg);}
+    100%{filter:hue-rotate(360deg);}
+    }
+    
+    /* main content */
     .pageWrap{min-height:100vh;}
     section {
     min-height:calc(100vh - 57px);
@@ -44,8 +60,8 @@
     justify-content:center;
     flex-direction:column;
     }
-    .bg-img{background-image:url("img/bg-computer.jpg");}
-    .bg-img2{background-image:url("img/type2.jpg");}
+    .bg-img{background-image:url("https://i.ibb.co/kJs58ht/photo-1460925895917-afdab827c52f.jpg");}
+    .bg-img2{background-image:url("https://i.ibb.co/HCGzX0n/type2.jpg");}
     #top{
     position:fixed;
     bottom:25px;
@@ -57,7 +73,64 @@
     .bg-op-6{background:rgba(0,0,0,0.6);}
     .bg-op-3{background:rgba(0,0,0,0.3);}
     .cont{color:inherit;}
-    .cont:hover{background:white !important;color:#000 !important;}
+    
+    /*
+    |-----------------------------------------
+    | footer css (All footer CSS here)
+    |-----------------------------------------
+    */
+    .copyright {
+    background:rgba(0,0,0,.2);
+    color:grey;
+    }
+    #more-links a{
+    margin:5px 10px;
+    display:inline-block;
+    color:grey;
+    text-decoration:none;
+    transition:.5s;
+    }
+    #more-links a:hover{
+    color:#fff;
+    transform:translateX(3px);
+    }
+    .social{flex-direction:row !important;color:grey;}
+    .social ul{
+    margin:0 5px;
+    padding:0;
+    display:flex;
+    }
+    .social ul li{
+    list-style:none;
+    margin:0 5px;
+    }
+    .social ul li a{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:40px;
+    height:40px;
+    /*border-radius:50%;*/
+    text-decoration:none;
+    font-size:1.25rem;
+    color:#fff;
+    transition:all .5s;
+    }
+    
+    .social ul li a .fa{
+    transition:.5s;
+    }
+    .social ul li a:hover{
+    border:1px solid #fff;
+    border-radius:50%;
+    }
+    .social ul li a:hover .fa{
+    color:#fff;
+    transform:scale(.85);
+    }
+    
+    
     /* data-aos */
     [data-aos] {
     visibility: hidden;
@@ -65,6 +138,19 @@
     [data-aos].animated {
     visibility: visible;
     }
+    .share{
+    position:fixed;
+    background:rgba(255,255,255,.05);
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    right:25px;
+    bottom:100px;
+    box-shadow:0 0 10px rgba(0,0,0,.5),0 0 25px rgba(0,0,0,.05);
+    color:rgba(0,0,0,.3);
+    z-index:1200;
+    }
+    .center-center{display:flex;flex-direction: column;justify-content: center;align-items:center;}
     .delay-0-5s{animation-delay:.5s !important;}
     .delay-1-5s{animation-delay:1.5s !important;}
     </style>
@@ -73,7 +159,7 @@
   <p id="top" class="p-2 text-light bg-op-6 rounded" >Top</p>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 	    <a class="navbar-brand" href="./" data-aos="bounceInRight" >
-		   <img src="img/skwebs-64.34.png" alt="logo" >
+		   <img src="https://i.ibb.co/SdK3xdt/skwebs-22-27.png" >
 	    </a>
 	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
@@ -85,13 +171,16 @@
 				    <a class="nav-link" href="#welcome">Welcome <span class="sr-only">(current)</span></a>
 			    </li>
 			    <li class="nav-item">
+				    <a class="nav-link" href="#demo">Demo</a>
+			    </li>
+			    <li class="nav-item">
+				    <a class="nav-link" href="#plugins">Plugin</a>
+			    </li>
+			    <li class="nav-item">
 				    <a class="nav-link" href="#about">About Us</a>
 			    </li>
 			    <li class="nav-item">
 				    <a class="nav-link" href="#contact">Contact Us</a>
-			    </li>
-			    <li class="nav-item">
-				    <a class="nav-link" href="#demo">Demo</a>
 			    </li>
 			    <li class="nav-item">
 				    <a class="nav-link" href="#more-links">More Links</a>
@@ -129,7 +218,7 @@
     </section>
     
     
-    <section id="plugins" class="parallax__container p-4 bg-primary" >
+    <section id="plugins" class="parallax__container p-4 bg-success" >
     <div data-aos="zoomIn" class="bg-op-6 p-3 rounded w-100 p-4 text-light" >
     <p data-aos="bounceInDown delay-1s" class="h3 text-center border rounded p-2 mb-4" >Plugins</p>
     <p data-aos="bounceInUp h5 delay-1-5s">The framework/plugins that I used in this project.</p>
@@ -145,7 +234,7 @@
     5. <a class="cont" href="#" >universal-parallax</a>
     </p>
     </div>
-    <div class="parallax" data-parallax-image="img/type1.jpg"></div>
+    <div class="parallax" data-parallax-image="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io/img/skwebRound.png"></div>
     </section>
     
     
@@ -172,13 +261,48 @@
     
     
     
+    <i class="share center-center fa fa-share-alt fa-2x" ></i>
     
+    <footer data-aos="fadeIn faster" data-aos-offset="0" class="footer bg-dark" >
+    	    <div class="py-1 bg-primary" >
+    		    <div class="container text-light social center-center" >
+    			    <ul class="d-none d-md-flex" > <li>Follow us on : </li></ul>
+    			    <ul>
+    				    <li class="fb" ><a href="https://fb.com/skwebsofficial/" ><i class="fa fa-facebook" ></i></a></li>
+    				    <li class="tw" ><a href="https://twitter.com/SatishKmrSharma/" ><i class="fa fa-twitter" ></i></a></li>
+    				    <li class="ig" ><a href="https://instagram.com/satishkmrsharma/" ><i class="fa fa-instagram" ></i></a></li>
+    				    <li class="yt" ><a href="#!" ><i class="fa fa-youtube" ></i></a></li>
+    			    </ul>
+    		    </div>
+    	    </div>
+    	    <hr class="m-0 bg-half-black" >
+    	    <div id="more-links" class="container py-4" >
+    		    <a href="mailto:skwebservices@gmail.com" >Email</a>
+    		    <a href="https://facebook.com/satishkumarsharma05">Facebook</a>
+    		    <a href="https://m.me/sks555sks" >Messenger</a>
+    		    
+    	    </div>
+    	    <div data-aos="fadeIn" data-aos-offset="0" class="copyright my-auto py-4 text-center " >
+    		    &copy<script>document.write(new Date().getFullYear())</script> <a class="text-lightgrey mr-md-5" href="./" ><b>SKWebs.GitHub.io</b>.</a><span class="d-none d-md-inline" >All Right Reserved.</span>
+    		    <!--<hr class="d-md-none bg-half-black" >
+    		    Designed & Developed by <strong><a href="https://skwebs.github.io" data-aos="pulse infinite" data-aos-offset="0" class="d-inline-block border border-primary rounded px-1" >S.K.Webs</a></strong> <!--<a href="https://facebook.com/skwebsofficial" class="nowrap border border-primary rounded px-1 d-inline-block" >S.K.Sharma <i class="fa fa-facebook-square" ></i></a>
+    		    -->
+    	    </div>
+    </footer>
+     
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/skwebs-local-p.js"></script>
+    <script src="js/skwebs-local-p.j"></script>
     <script>
+    //protect image script
     $(document).ready(function () {
+    $('img').bind('contextmenu', function(e){
+    alert("This image is protected"); return false;
+    });
+    
+    //share api script
+    
     //menu collapse after clicking menu or other bpdy
     $(".pageWrap, .nav-item").click(()=>{
     $("#navContent").collapse('hide');
