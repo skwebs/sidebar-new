@@ -6,13 +6,13 @@
   "background_color": "#fff",
   "description": "Anshu Memorial Academy School Application.",
   "icons": [{
-    "src": "img/icons/icon-48.png",
-    "sizes": "48x48",
+    "src": "img/icons/icon-128.png",
+    "sizes": "128x128",
     "type": "image/png"
   },
   {
-    "src": "img/icons/icon-192.png",
-    "sizes": "192x192",
+    "src": "img/icons/icon-256.png",
+    "sizes": "256x256",
     "type": "image/png"
   }]
 }
