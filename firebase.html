@@ -1,36 +1,92 @@
 <!DOCTYPE html>
-<html> 
-<head> 
-<title>Firebase Firestore Database</title> 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-        <style type="text/css">
-        
-        </style>
-        <link rel="stylesheet" href="style.css">
-    </head> 
-    <body> 
-        <div id="loading" >
-        <p id="respMsg" >Wait...</p>
-        </div>
-        
-        
-        
-        <p class="heading" >Firebase CRUD App with <strong>Firestore</strong><p>
-        <div class="container" >
-        <div id="form-container" ></div>
-        
-        <div id="data-list-box" >
-        <p id="addNewRecordBtn" class="btn font2x" >Add New Record </p>
-        <div id="details"></di>
-        </div>
-        </div>
-<script>
-
-</script> 
-<script src="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io@master/js/config.js"></script>
-<script src="app.min.js"></script>
-</body> 
+<html>
+	<head> 
+		<title>Firebase Firestore Database</title> 
+		<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js">
+		</script> <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>       
+		<style type="text/css">
+		*{margin:0;padding:0;box-sizing:border-box
+		}.container{padding:1.5rem}
+		#loading{padding:1rem;display:flex;justify-content:center;align-items:center;z-index:5;background:rgba(0,0,0,.75);position:fixed;top:0;bottom:0;left:0;right:0}
+		#loading p{text-align:center;width:100%;padding:1.5rem 0;background:rgba(0,0,0,.75);color:#fff;font-size:1.3rem}
+		button{padding:5px 12px;font-size:1.5rem;background:green;border:none;border-radius:5px;outline:0;box-shadow:none;color:#fff;transition:all .3s}
+		.btn:hover,button:active,button:hover{color:#fff;transform:translate3d(-1px,-1px,5px);box-shadow:2px 2px 5px rgba(0,0,0,.5)}
+		button+button{margin-left:.25rem;background:red}
+		.table-box{border:2px solid #4caf50}
+		.sk-table{font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;border-collapse:collapse;width:100%;box-sizing:border-box;overflow-x:scroll}
+		.sk-table td,.sk-table th{border-bottom:1px solid #ddd;padding:5px;text-align:center}
+		.sk-table tr:nth-child(even){background-color:#f2f2f2}
+		.sk-table tr:hover{background-color:#ededed}
+		.sk-table th{padding-top:12px;padding-bottom:12px;text-align:center;background-color:#4caf50;color:#fff}
+		input[type=text],select{width:100%;padding:12px 20px;margin:8px 0;display:inline-block;border:1px solid #ccc;border-radius:4px;box-sizing:border-box}
+		.btn,input[type=submit]{width:100%;font-size:1rem;background-color:#4caf50;color:#fff;padding:14px 20px;margin:8px 0;border:none;border-radius:4px;cursor:pointer;transition:all .3s}
+		input[type=submit]:hover{background-color:#45a049}.box{border-radius:5px;background-color:#f2f2f2;padding:20px}
+		#details{background:#f2f2f2}
+		#details h2{padding:1rem 0}
+		.btn{text-align:center}
+		.bg-red{background:red}
+		.font2x{font-size:1.2rem}
+		.heading{font-size:1.3rem;padding:50px 0;text-align:center;background:#dfdfdf;color:teal}
+		.btn img, button img{height:20px;width:20px;}</style>
+	</head> 
+	<body> 
+		<div id="loading" > 
+			<p id="respMsg" >Wait...</p>
+		</div>
+		<p class="heading" >Firebase CRUD App with <strong>Firestore</strong><p> 
+		<div class="container" > 
+			<div id="form-container" ></div>
+			<div id="data-list-box" > 
+				<p id="addNewRecordBtn" class="btn font2x" >Add New Record </p>
+				<div id="details"></div> 
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io@master/js/config.js"></script>
+		<script>;
+			const db=config();var loading=document.getElementById("loading"),respMsg=document.querySelector("#respMsg"),dataList=document.querySelector("#dataList"),form=document.querySelector("#form");
+			
+			function createRecord(){
+				var 
+				e=document.getElementById("fname").value,
+				t=document.getElementById("lname").value;
+				""==e?alert("First Name required."):""==t?alert("Last Name required."):(
+					msgScreen("teal","New record adding..."),
+					showLoading(),
+					db
+					.collection("sololearn")
+					.add({fname:e,lname:t})
+					.then(function(){
+						console.log("Document successfully written!"),
+						respMsg.style.background="green",
+						respMsg.innerHTML="Record added successfully.",
+						hideLoading(),
+						document.getElementById("form-container").innerHTML="",
+						document.querySelector("#data-list-box").style.display="block",
+						readRecords()
+					})
+					.catch(function(e){
+						respMsg.style.background="red",
+						respMsg.innerHTML="Error writing document: "+e,
+						hideLoading(),
+						console.error("Error writing document: ",e),
+						readRecords()
+					})
+				)
+			}
+			
+			function readRecords(){msgScreen("magenta","All records loading..."),showLoading();var e="<div class='table-box'><table class='sk-table'><tr><td colspan='100%'><h2>All Records List</h2></td></tr><tr><th>S.N.</th><th>First Name</th><th>Last Name</th><th>Action</th></tr>",t=1;db.collection("sololearn").get().then(function(n){n.forEach(function(n){e+="<tr><td>"+t+++"</td><td>"+n.data().fname+" </td> <td> "+n.data().lname+"</td><td><button onclick=\"updateRecordForm('"+n.id+'\')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABHNCSVQICAgIfAhkiAAABX5JREFUaIHtmluIlWUUhp9vRkvH0VIryk6O0clQKws1OohFGUhWUFFdBCVFFxFUN1EQdFEE0ckLKTpTUqmRRaJlF9FB1IrKTlASWZmaeXbGPMzTxbembPpn79nuvWfPRS/Mxfx7/ft/178O7/q+b8P/qA5qk3qQmmrxfTX5kkqgjgYmA21AK7AVWAUsTylt6ms+FSMiMEV9Tv1e3aH+qW5TP1cfUg9rNM+SUJM6Tn1N3e5/0aluUh9Wj6xVutUcaqt6n7o+SPeE39Vr1CGVPqOpHsQLMB64ChhB6bo8DJgBHFrpA+ruiNoM3AKMBgb04pYTgcGVPqcvIjIUuBAYBNgL+85e2v0LfeFIB/AKsJ7yJAW+i3v6H6LYL1QXq7tKFPsedYZ6cKM5/w11iDpKbYn/B6pt6m3qimjDXR2sU92nvqAe1Wjuf0MdHoTfU2epA+J6UoeGMN6vrgxR7AyRnBzNoWL0potUhCAyEZgFnASsBJqBvSklge3qCuAHYDm53Z4MLAFWpZT21ZrTASHS6enI97Xq9FJKrY5UJ6lH9CXPklBbQpk3RA3MUUcU2A0MB4bX6tk1S6146ycAVwIjgS+A+cCWAvPxwBVAuzo7pbS9VjyqRkTjLvVXdav6YFfH6mbXqj6qbjRPvWMbwbdHmKfb96MLva+eWWCT1MvVVWqH+kaRsw1DRONhdbP6i3pzUYGHjswLUfxGvbQRfHuEepn6lXmxNK+oiM3L2lvV3yL1Hq1lsVcN9Wj1VXV3vOWZPdidpr4Tbflj9YJSbblSVDU0qgOBaeQ1+G6yqH1SYDeYLHwTyAPhG2Txq3jKrQvUserCyPll6tSucaSb3TkxjnSo86Mx9J/lrHqnefm6NVpvUW0MimFwm7pavVY9qBF8/4Noo2PUL6LdvlWkB2pztNtN6s5Q+lGN4FwIdZj6SKTKT+r1dltDhLNt6pJoBF+a1xp9tU9QGtFGZ0Y6dajPFL3l/ZR+S7TlB9SRjeBcCPWoSKVO9bvQkKICP0P9MOy+Ucf3p2gMVm8yT7d71cfUQwrsWtV71PboaDf2t1FkQkRjt/pjtNGmbjbN5vX5qnB2kQWjfMNgXqLea56ndkRkilLqWPWlcHaNOq0/pVSKt/xZpMoitbXArkW9Ogq8XZ2tVrxrWDeox6lPhRasVq8osEnq6eoC847IJ6H0fRKNsg8xz0lTgIuBfcB7wMcFpi3AdGASeVW4GPgspdRZM7bVQD1Jfdk8tX5qD5sJ5g2ED0Nb3lXH9SXPkhGJtJgInA20k6OxvPvUqg4DrgFOBTYCC4Cv6kH4gBDF+1yo+DL1/AKb5ijwb82D4VwbcPJUrkZGA+PIuy0rgRUFNscAVwNjgJ+AeSmljTXk2CuUc+Qs4HBgAzmldu3/YejIJcAF5EawFFhWB55lUc6RM4BhZEe+Lvj8POAG4BDyyez8sO1zlNugayOfHm0C1nRd9J/NuDuA04E/gGfJy9eGtNseIxJDXteMtIXctbo2qccDT5BPovaQnViYUtpWV7YlUCoircDBwF5gO6D5tHUycDtZIDuAt4EXU0rr6sy1JEo5MhQYSC7ifWSNmEbes51I/sXC68CTwOr60iyPUo4Mic+byOcXdwPnktNtLbAQmAP8mFLaW2eeZdGbiAwBpsa1dnJ3egZ4qkvhY71+OPnktpptHoF1wM79vrsJGA4MSCmtPxBHBpNPmiDXyTqyTrwMfNBtTDmP/IOAag9rJI9Bc4HNce144DpguPp4SunnohtLObIz/jaTzzqeB5amlNYW2E4BLidrTjWQnAGL+LcjlwJHxvVCR0odiQ0iF3YLeWz/IaW0pwfbU8iOtFHdNuwu4E3go5RSV7sfAVxEFt25KaWdRTf+BQ/HA4S8OdoDAAAAAElFTkSuQmCC"> </button><button onclick="deleteRecord(\''+n.id+'\')"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABHNCSVQICAgIfAhkiAAAAxxJREFUaIHtmk2IHEUYhp8vP7tZf4gYXUERA0ZQAiqCIBoRUTQnwUMOHvTuKXj15M2r4l0vOYQYxOOKoiKByPpzEFSIoJisrLsLZrKYuLDuPB6qGibtuN0z3bMZYj8w0NXffFXvO/NVT3X1QEfHRIi2OlL3AM8AD9foV2AdOBkRF9vS0Bj1AfUTR2dZfVWdu9YeUA+qi2OYKNhQX2mqY1cLXo4BDzXInwFeVu9uImJPk2T1DuDxLKbgZ+DbitTbgCN5/AAeJH0YF5roGRv1WXVloEx66tEaefPq+6USe0fdO66WpqX1HDA/0P4a+LFG3hpwBtgYOPcisG9cIUNLK9frC8BNFfnHS+054CXVGmMfAv4eaN8FnFI/r8j7KiI+rexdvUV9r8FVaNIsqUfKuoeV1n7gYKXja8edwIHyyWFGBLYmLmd8thii719GIuI8cAL4cwdEjcOHwJcjZ6nPm5YSBWfVe9rXd9WYx0vz4i11drucOpffoMXF5ZhUjt/GEmUquG6MNF1rzQJPAIdJH8o54LOI2MjxR4DHgL3AeWAhIv7KsfuBp0nrtHXg44hYaqKnSuxR9fdhk920hF9Qt9S++oV6KMfm1dPqZo6tqE/m2C719RxTvaweGxizPNnfrprsjb4RYJb0A1qU6AHg5nw8R1p2FGPMA7fm45ncLmI35NfYXDdzpDMybXRGpo3OyLTRGZk2OiPTRmdk2uiM/Ad90nZSwXbH/TYHbmrkEvA9aevoMvAD0MuxHmnbpgdcAb4h3SUCbOb3/kHa/z0H/NpESNMbq1XgDeDd3F4GlgAi4pL6JnAK2E3auP4lx/rqaeA70m3wOvBTEyGNjEREnyR86L12RKyRDAyL9YDFJuMP8r+a7Jv5VTBLKoeJoO4GbiydvkLFxaGOkYukSVlwGLh3JHWjcTvwVOncakRsDntzQZ05skaa1JK2LmeABWs9y2mFVfJFYjsqv5GIuAB8wNXltZOcAc620pO6X/1opOdK7bCiPtqKiZKh10y7ijvBoulvIbUY+XGBug+4j7STOAn6wG8RsTyh/jt2hH8AmdBx++iZ7oEAAAAASUVORK5CYII="> </button></td><tr/>'}),e+="</table></div>",document.getElementById("details").innerHTML=e,msgScreen("black","Records loaded successfully."),hideLoading()})} 
+			function updateRecord(e){var t=document.getElementById("fname").value,n=document.getElementById("lname").value;if(""==t)alert("First Name required.");else{if(""!=n)return msgScreen("green","Id : "+e+" associated data updating...!"),showLoading(),db.collection("sololearn").doc(e).update({fname:document.getElementById("fname").value,lname:document.getElementById("lname").value}).then(function(){msgScreen("green","Id : "+e+" records updated successfully."),hideLoading(),showDataBox(),document.getElementById("form-container").innerHTML="",readRecords()}).catch(function(e){console.error("Error updating document: ",e)});alert("Last Name required.")}}
+			function deleteRecord(e){confirm("Id : "+e+"\n\nAre you want to delete it?")&&(msgScreen("red","Id : "+e+" associated data deleting...!"),showLoading(),db.collection("sololearn").doc(e).delete().then(function(){msgScreen("green"," : "+e+" records deleted successfully."),hideLoading(),readRecords()}).catch(function(e){console.error("Error removing document: ",e)}))}
+			function msgScreen(e,t){respMsg.style.background=e,respMsg.innerHTML=t}
+			function showLoading(){loading.style.display="flex"}
+			function hideLoading(){loading.style.display="none"}
+			function showCreateForm(){document.getElementById("form-container").innerHTML='<div class="box" ><label for="fname">First Name</label><input type="text" id="fname" placeholder="First name.."><label for="lname">Last Name</label><input type="text" id="lname" placeholder="Last name.."><input id="submit"  type="submit" value="Save"  onclick="createRecord()"><button class="btn bg-red" onclick=\'cancelAction()\'>Cancel</button></div></div></div>'}
+			function hideForm(){document.getElementById("form-container").innerHTML=""}
+			function showDataBox(){document.querySelector("#data-list-box").style.display="block"}
+			function hideDataBox(){document.querySelector("#data-list-box").style.display="none"}
+			function updateRecordForm(e){msgScreen("green","Loading record for editing..."),showLoading(),db.collection("sololearn").doc(e).get().then(function(t){t.exists?(document.getElementById("form-container").innerHTML='<div class="box" ><label for="fname">First Name</label><input type="text" id="fname" value="'+t.data().fname+'" placeholder="First name.."><label for="lname">Last Name</label><input type="text" id="lname" value="'+t.data().lname+'" placeholder="Last name.."><input id="submit"  type="submit" value="Update"  onclick=\'updateRecord("'+e+"\")'><button class=\"bg-red btn\" onclick='cancelAction()'>Cancel</button></div>",hideDataBox(),hideLoading()):console.log("No such document!")}).catch(function(e){console.log("Error getting document:",e)})}
+			function cancelAction(){document.querySelector("#data-list-box").style.display="block",hideForm()}
+			function editData(e){showLoading()}document.querySelector("#addNewRecordBtn").addEventListener("click",e=>{hideDataBox(),showCreateForm()}),readRecords();
+		</script> 
+	</body> 
 </html>
