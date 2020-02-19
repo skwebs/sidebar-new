@@ -1,3 +1,31 @@
+function hide(){
+	document.getElementById("loader").style.display="none";
+};
+window.onload = hide;
+
+var pageUrl= window.location.href;
+var d = new Date();
+var ts = d.toLocaleString();
+var titleText = "Bihar Board Class 9th English Book Question Answer!";
+var footerNoteMsg="Printed from <a href=\""+pageUrl+"\">"+pageUrl+"</a> on "+ts+" Created, managed & maintained by Satish (Web Developer)";
+
+
+
+var title = document.createElement("title");
+var t = document.createTextNode(titleText)
+title.appendChild(t);
+document.head.appendChild(title);
+
+var contentDiv = document.createElement('div');
+document.body.appendChild(contentDiv);
+var fn = document.querySelector("#fn");
+fn.classList.add("onlyPrint","footNote")
+fn.innerHTML=footerNoteMsg;
+
+
+
+
+
 var myObj = class9;
 var i,j,k,l,x="";
 
