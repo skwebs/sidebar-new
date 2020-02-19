@@ -68,6 +68,23 @@ transform:rotate(-90deg);
 	}
 }
 
+#loader{
+position:fixed;
+left:0;
+right:0;
+top:0;
+bottom:0;
+display:flex;
+justify-content: center;
+align-items:center;
+background:darkblue;
+z-index:10000000;
+}
+#loader p{
+color:white;
+font-size:2rem;
+}
+
 /*
 @page :left {
   margin-left: .5cm;
