@@ -1,6 +1,10 @@
+/*main.css */
 *{margin:0;padding:0;box-sizing:border-box;}
-body{padding:15px;}
-td{vertical-align:text-top;}
+body{
+padding:15px;
+text-align:justify;
+}
+td{vertical-align:text-top !important;}
 tr  td:first-child {white-space:nowrap;}
 .ch{text-align:center;padding:10px;
 }
@@ -9,3 +13,117 @@ tr  td:first-child {white-space:nowrap;}
 .quesSec{
 display:block;
 padding:1px;}
+table{margin-bottom:30px !important;}
+
+.footNote{
+text-align:center;
+font-size:.5rem;
+position:fixed;
+bottom:0;
+}
+#print{
+position:fixed;
+right:-10px;
+bottom:250px;
+padding:5px 10px;
+border-radius:5px 5px 0 0;
+z-index:5;
+background:blue;
+color:white;
+transition:all .3s;
+font-weight:bold;
+font-size:20px;
+transform:rotate(-90deg);
+}
+
+@page {
+  size: A4 portrait;
+  /*margin: 11mm 17mm 17mm 17mm;*/
+  margin-bottom:20pt;
+}
+
+/* on-screen styles */
+@media screen {
+	.noPrint{
+	display:inherit;
+	}
+	.onlyPrint{
+	display:none;
+	}
+	
+}
+
+/* print styles */
+@media print {
+	.noPrint{display:none;}
+	  body {
+	    margin: 0;
+	    color: #000;
+	    background-color: #fff;
+	    padding:0;
+	    font-size:16pt;
+	  }
+	.onlyPrint{
+	display:inherit;
+	}
+}
+
+/*
+@page :left {
+  margin-left: .5cm;
+}
+
+@page :right {
+  margin-left: .5cm;
+}
+
+@page :blank {
+  @top-center { content: "This page is intentionally left blank." }
+}
+
+@page:right{ 
+  @bottom-left {
+    margin: 10pt 0 30pt 0;
+    border-top: .25pt solid #666;
+    content: "My book";
+    font-size: 9pt;
+    color: #333;
+  }
+}
+media screen {
+  div.divFooter {
+    display: none;
+  }
+}
+@media print {
+  div.divFooter {
+    position: fixed;
+    bottom: 0;
+  }
+}
+footer {
+  font-size: 9px;
+  color: #f00;
+  text-align: center;
+}
+
+@page {
+  size: A4;
+  margin: 11mm 17mm 17mm 17mm;
+}
+
+@media print {
+  footer {
+    position: fixed;
+    bottom: 0;
+  }
+
+  .content-block, p {
+    page-break-inside: avoid;
+    }
+}
+*/
+
+
+
+
