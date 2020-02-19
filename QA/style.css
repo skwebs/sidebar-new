@@ -1,0 +1,11 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+body{padding:15px;}
+td{vertical-align:text-top;}
+tr  td:first-child {white-space:nowrap;}
+.ch{text-align:center;padding:10px;
+}
+.ques{font-weight:bold;}
+/*table {border-collapse:separate; border-spacing: 0 1em;}*/
+.quesSec{
+display:block;
+padding:1px;}
