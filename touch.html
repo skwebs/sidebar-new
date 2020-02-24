@@ -81,14 +81,17 @@
 		vertical-align: middle;
 		}
 		.drawerNav .nav-item a:before{
-		position:absolute;
-		font-family: FontAwesome;
-		right:5px;
+		position:relative;
+		left:-15px;
 		padding:0 15px;
 		display: inline-block;
-		content: "\f054";
 		vertical-align: middle;
 		}
+		.nav-item.home a:before{
+		font-family: FontAwesome;
+		content: "\f015";
+		}
+		
 		</style>
 	</head>
 	<body>
@@ -101,7 +104,7 @@
 			</button>
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
+					<li class="nav-item active home">
 						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
