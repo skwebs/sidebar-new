@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<title>Touch Responsive Sidebar Drawer</title>
+		<style type="text/css">
+		*{margin:0;padding:0;box-sizing:border-box;}
+		body {height:100vh; }
+		#touchSurface{
+			width:100%;
+			height:100vh;
+			text-align:center;
+			padding:10px;
+		}
+		#sk-drawer{
+			position:fixed;
+			top:0;
+			bottom:0;
+			z-index:1299;
+			width:300px;
+			background:#fff; /*rgba(0,0,0,.5);*/
+			transform:translateX(-300px);
+			box-shadow:0 0 7px rgba(0,0,0,.3); 
+		}
+			/* Bootstrap customization*/
+		.sk-nav{
+			box-shadow:0 0 5px rgba(0,0,0,0.5);
+		}
+		.bg-white{
+			background:#fff;
+		}
+		.sk-nav .navbar-toggler:hover,
+		.sk-nav .navbar-toggler:focus,
+		.sk-nav .navbar-toggler:active{
+			outline:none;
+			box-shadow:2px 2px 5px rgba(0,0,0,0.2);
+		}
+		#overlay{
+			position:fixed;
+			top:0;
+			bottom:0;left:0;right:0;
+			z-index:1031;
+			background:rgba(0,0,0,.5);
+			display:none;
+		}
+		.drawerProfile{
+		width:100%;
+		height:125px;
+		padding:20px;
+		}
+		.drawerNav{
+		width:100%;
+		padding:5px 10px;
+		height:100vh;
+		}
+		.drawerNav .nav-item{
+		padding:0 15px;
+		margin:5px 0;
+		box-shadow:1px 1px 5px #aaa;/*rgba(0,0,0,.5);*/
+		ackground:#007BFF;
+		}
+		.drawerNav .nav-item:hover{
+		background:#007BFF;
+		}
+		.drawerNav .nav-item:active a,
+		.drawerNav .nav-item:hover a
+		{
+		color:#fff ;
+		}
+		.drawerNav .nav-item a:after{
+		position:absolute;
+		font-family: FontAwesome;
+		right:5px;
+		padding:0 15px;
+		display: inline-block;
+		content: "\f054";
+		vertical-align: middle;
+		}
+		.drawerNav .nav-item a:before{
+		position:absolute;
+		font-family: FontAwesome;
+		right:5px;
+		padding:0 15px;
+		display: inline-block;
+		content: "\f054";
+		vertical-align: middle;
+		}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar sk-nav fixed-top navbar-expand-m navbar-light bg-white">
+			<a class="navbar-brand" href="#">
+			<b>Logo</b>
+			</a>
+			<button class="navbar-toggler" type="button" >
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link<!--<i class="fa fa-quote-left fa-pull-right fa-border" aria-hidden="true"></i>--></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		
+
+		
+		<div id="sk-drawer" >	</div>
+		<div id="overlay" ></div>
+		<div id="touchSurface" ><br><br><br><br>
+			<h2>Touch Responsive Sidebar</h2>
+			<br>
+			<h3>Features</h3>
+			<p>
+				You can open sidebar by swiping finger <br>
+				from the end of left side. Sidebar will be<br>
+				open or, close with your finger moving <br>
+				direction as like android/google app.
+			</p>
+			<br>
+			<br>
+			
+			
+		</div>
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		
+		<script type="text/javascript">
+		    //variables declaration
+		    function elem(e){return document.querySelector(e);}
+		    var touchSurface = document.querySelector("#touchSurface");
+		    var drawer = document.querySelector("#sk-drawer");
+		    var drawerWidth = drawer.offsetWidth;
+		    var startX = "";
+		    var change = "";
+		    var drawerOpened = false;
+		    var minTouchLeft =30;
+		    var navbarToggler = elem(".navbar-toggler");
+		    var overlay = elem("#overlay");
+		    var drawerTransition = "transform 500ms ";
+		    var overlayTransition = "all 1s ease-in 500ms";
+		    var navExpandClass = "md";
+		    
+		    document.addEventListener("DOMContentLoaded", ()=>{
+		      touchSurface.addEventListener("touchstart", handleStart, false);
+		      touchSurface.addEventListener("touchend", handleEnd, false);
+		      touchSurface.addEventListener("touchmove", handleMove, false);
+		      //for drawer
+		      drawer.addEventListener("touchstart",drawerHandlerStart,false);
+		      drawer.addEventListener("touchmove",drawerHandlerMove,false);
+		      drawer.addEventListener("touchend",drawerHandlerEnd,false);
+		    });
+		    
+		    //drawer opening time
+		    function handleStart(e){
+		        if(!drawerOpened){
+		            startX = e.changedTouches[0].clientX;
+		        }
+		        if(startX<minTouchLeft){
+			        overlay.style.opacity=0;
+			        overlay.style.display="block";
+			        drawer.style.transition="none";
+			        overlay.style.transition="none";
+		        }
+		    }
+		    function handleMove(e){
+		        if(!drawerOpened){
+		            if(startX<minTouchLeft){
+		                change = e.changedTouches[0].clientX - startX;
+		                if((change-drawerWidth) < 0){
+		                    drawer.style.transform="translateX("+(change-drawerWidth)+"px)";
+			                overlay.style.opacity=change/drawerWidth;
+		                }
+		            }
+		        }
+		    }
+		    function handleEnd(e){
+		        if(!drawerOpened){
+		            if(startX<minTouchLeft){
+		                if(change<(drawerWidth/3)){
+		                drawerClose();
+		                }else{
+		                drawerOpen();
+		                }
+		            }
+		        }
+		    }
+		    
+		    // drawer closing time
+		    function drawerHandlerStart(e){
+		        overlay.style.display="block";
+		        drawer.style.transition="none";
+		        overlay.style.transition="none";
+		        if(drawerOpened){
+		            startX = e.changedTouches[0].clientX;
+		        }
+		    }
+		    function drawerHandlerMove(e){
+		        if(drawerOpened){
+		            change = e.changedTouches[0].clientX - startX;
+		            if(change<0){
+		                drawer.style.transform="translateX("+change+"px)";
+			            overlay.style.opacity=(drawerWidth+change)/drawerWidth;
+		            }
+		        }
+		    }
+		    function drawerHandlerEnd(e){
+		        if(drawerOpened){
+		            if(change<0){
+		                if(change<(0-drawerWidth/3)){
+		                    drawerClose();
+		                }else{
+		                    drawerOpen();
+		                }
+		            }
+		        }
+		    }
+		    
+		    
+		    function handleCancel(e){}
+		   
+		    function drawerOpen(){
+			    overlay.style.display="block";
+		        drawer.style.transform="translateX(0px)";
+		        drawer.style.transition=drawerTransition;
+		        overlay.style.transition=overlayTransition;
+		        drawerOpened = true;
+		    }
+		    function drawerClose(){
+		        overlay.style.display="none";
+		        drawer.style.transform="translateX(-"+drawerWidth+"px)";
+		        drawer.style.transition=drawerTransition;
+		        overlay.style.transition=overlayTransition;
+		        drawerOpened = false;
+		    }
+		    
+		    function drawerToggle(){
+			    if(drawerOpened){
+				    drawerClose();
+			    }else{
+				    drawerOpen();
+			    }
+		    }
+		    overlay.addEventListener("click",()=>{drawerClose();})
+		    navbarToggler.addEventListener("click",()=>{drawerToggle();})
+		   
+		    
+		    
+		    /*
+		    // compressed js script
+		    function elem(e){
+			    return document.querySelector(e)
+		    }
+		    var touchSurface=elem("body"),
+		    drawer=elem("#drawer"),
+		    drawerWidth=drawer.offsetWidth,
+		    startX="",
+		    change="",
+		    drawerOpened=!1,
+		    minTouchLeft=30,
+		    navbarToggler=elem(".navbar-toggler"),
+		    overlay=elem("#overlay");
+		    function handleStart(e){
+			    drawerOpened||(startX=e.changedTouches[0].clientX),
+			    startX<minTouchLeft&&(overlay.style.display="block",
+			    drawer.style.transition="none",
+			    overlay.style.transition="none")
+		    }
+		    function handleMove(e){
+			    drawerOpened||startX<minTouchLeft&&(change=e.changedTouches[0].clientX-startX)-drawerWidth<0&&(drawer.style.transform="translateX("+(change-drawerWidth)+"px)",
+			    overlay.style.opacity=change/drawerWidth)
+		    }
+		    function handleEnd(e){
+			    drawerOpened||startX<minTouchLeft&&(change<drawerWidth/3?drawerClose():drawerOpen())
+		    }
+		    function drawerHandlerStart(e){
+			    overlay.style.display="block",
+			    drawer.style.transition="none",
+			    overlay.style.transition="none",
+			    drawerOpened&&(startX=e.changedTouches[0].clientX)
+		    }
+		    function drawerHandlerMove(e){
+			    drawerOpened&&(change=e.changedTouches[0].clientX-startX,
+			    change<0&&(drawer.style.transform="translateX("+change+"px)",
+			    overlay.style.opacity=(drawerWidth+change)/drawerWidth))
+		    }
+		    function drawerHandlerEnd(e){
+			    drawerOpened&&change<0&&(change<0-drawerWidth/3?drawerClose():drawerOpen())
+		    }
+		    function handleCancel(e){}
+		    function drawerOpen(){
+			    overlay.style.display="block",
+			    drawer.style.transform="translateX(0px)",
+			    drawer.style.transition="transform .3s ",
+			    overlay.style.transition="transform 1s ease-in",
+			    drawerOpened=!0
+		    }
+		    function drawerClose(){
+			    overlay.style.display="none",
+			    drawer.style.transform="translateX(-"+drawerWidth+"px)",
+			    drawer.style.transition="transform .3s",
+			    overlay.style.transition="transform  .6s ease-in .2s",
+			    drawerOpened=!1
+		    }
+		    function drawerToggle(){
+			    drawerOpened?drawerClose():drawerOpen()
+		    }
+		    document.addEventListener("DOMContentLoaded",()=>{
+			    touchSurface.addEventListener("touchstart",handleStart,!1),
+			    touchSurface.addEventListener("touchend",handleEnd,!1),
+			    touchSurface.addEventListener("touchmove",handleMove,!1),
+			    drawer.addEventListener("touchstart",drawerHandlerStart,!1),
+			    drawer.addEventListener("touchmove",drawerHandlerMove,!1),
+			    drawer.addEventListener("touchend",drawerHandlerEnd,!1)
+		    }),
+		    overlay.addEventListener("click",()=>{
+			    drawerClose()
+		    }),
+		    navbarToggler.addEventListener("click",()=>{
+			    drawerToggle()
+		    });
+		    */
+		    
+		    
+		    
+		    //jquery code here
+		    $(()=>{
+			    $(".sk-nav").addClass("navbar-expand-"+navExpandClass)
+			    $('<div class="drawerProfile bg-primary text-light" ></div><div class="drawerNav" ></div>').appendTo("#sk-drawer");
+			    $('<p class="p-2" >Satish Kumar Sharma<br>Email : XXXXXXX@gmail.com<br>Contact : 9XXXXXXXX0</p>').appendTo(".drawerProfile")
+			    $('.navbar-nav').clone().appendTo('.drawerNav');
+			    $("#sk-drawer").addClass("d-"+navExpandClass+"-none");
+			    $("#overlay").addClass("d-"+navExpandClass+"-none");
+			    
+		    })
+		</script>
+	</body>
+</html>
