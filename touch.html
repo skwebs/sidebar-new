@@ -63,6 +63,9 @@
 		box-shadow:1px 1px 5px #aaa;/*rgba(0,0,0,.5);*/
 		ackground:#007BFF;
 		}
+		drawerNav .nav-item a{
+		padding-left:0 !important;
+		}
 		.drawerNav .nav-item:hover{
 		background:#007BFF;
 		}
@@ -87,7 +90,7 @@
 		display: inline-block;
 		vertical-align: middle;
 		}
-		.nav-item.home a:before{
+		.drawerNav .nav-item.home a:before{
 		font-family: FontAwesome;
 		content: "\f015";
 		}
@@ -96,6 +99,7 @@
 	</head>
 	<body>
 		<nav class="navbar sk-nav fixed-top navbar-expand-m navbar-light bg-white">
+		<div class="container" >
 			<a class="navbar-brand" href="#">
 			<b>Logo</b>
 			</a>
@@ -114,6 +118,7 @@
 						<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
 					</li>
 				</ul>
+			</div>
 			</div>
 		</nav>
 		
@@ -143,7 +148,7 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 		
 		<script type="text/javascript">
-		    //variables declaration
+		    /*/variables declaration
 		    function elem(e){return document.querySelector(e);}
 		    var touchSurface = document.querySelector("#touchSurface");
 		    var drawer = document.querySelector("#sk-drawer");
@@ -261,25 +266,41 @@
 		    overlay.addEventListener("click",()=>{drawerClose();})
 		    navbarToggler.addEventListener("click",()=>{drawerToggle();})
 		   
+		    //jquery code here
+		    $(()=>{
+			    $(".sk-nav").addClass("navbar-expand-"+navExpandClass)
+			    $('<div class="drawerProfile bg-primary text-light" ></div><div class="drawerNav" ></div>').appendTo("#sk-drawer");
+			    $('<p class="p-2" >Satish Kumar Sharma<br>Email : XXXXXXX@gmail.com<br>Contact : 9XXXXXXXX0</p>').appendTo(".drawerProfile")
+			    $('.navbar-nav').clone().appendTo('.drawerNav');
+			    $("#sk-drawer").addClass("d-"+navExpandClass+"-none");
+			    $("#overlay").addClass("d-"+navExpandClass+"-none");
+			    
+		    })
+		    */
 		    
 		    
-		    /*
-		    // compressed js script
-		    function elem(e){
-			    return document.querySelector(e)
-		    }
-		    var touchSurface=elem("body"),
-		    drawer=elem("#drawer"),
+		    
+		    
+		    
+		    
+		    
+		    function elem(e){return document.querySelector(e)}
+		    var touchSurface=document.querySelector("#touchSurface"),
+		    drawer=document.querySelector("#sk-drawer"),
 		    drawerWidth=drawer.offsetWidth,
 		    startX="",
 		    change="",
 		    drawerOpened=!1,
 		    minTouchLeft=30,
 		    navbarToggler=elem(".navbar-toggler"),
-		    overlay=elem("#overlay");
+		    overlay=elem("#overlay"),
+		    drawerTransition="transform 500ms ",
+		    overlayTransition="all 1s ease-in 500ms",
+		    navExpandClass="md";
 		    function handleStart(e){
 			    drawerOpened||(startX=e.changedTouches[0].clientX),
-			    startX<minTouchLeft&&(overlay.style.display="block",
+			    startX<minTouchLeft&&(overlay.style.opacity=0,
+			    overlay.style.display="block",
 			    drawer.style.transition="none",
 			    overlay.style.transition="none")
 		    }
@@ -297,9 +318,8 @@
 			    drawerOpened&&(startX=e.changedTouches[0].clientX)
 		    }
 		    function drawerHandlerMove(e){
-			    drawerOpened&&(change=e.changedTouches[0].clientX-startX,
-			    change<0&&(drawer.style.transform="translateX("+change+"px)",
-			    overlay.style.opacity=(drawerWidth+change)/drawerWidth))
+			    drawerOpened&&(change=e.changedTouches[0].clientX-startX)<0&&(drawer.style.transform="translateX("+change+"px)",
+			    overlay.style.opacity=(drawerWidth+change)/drawerWidth)
 		    }
 		    function drawerHandlerEnd(e){
 			    drawerOpened&&change<0&&(change<0-drawerWidth/3?drawerClose():drawerOpen())
@@ -308,15 +328,15 @@
 		    function drawerOpen(){
 			    overlay.style.display="block",
 			    drawer.style.transform="translateX(0px)",
-			    drawer.style.transition="transform .3s ",
-			    overlay.style.transition="transform 1s ease-in",
+			    drawer.style.transition=drawerTransition,
+			    overlay.style.transition=overlayTransition,
 			    drawerOpened=!0
 		    }
 		    function drawerClose(){
 			    overlay.style.display="none",
 			    drawer.style.transform="translateX(-"+drawerWidth+"px)",
-			    drawer.style.transition="transform .3s",
-			    overlay.style.transition="transform  .6s ease-in .2s",
+			    drawer.style.transition=drawerTransition,
+			    overlay.style.transition=overlayTransition,
 			    drawerOpened=!1
 		    }
 		    function drawerToggle(){
@@ -333,23 +353,15 @@
 		    overlay.addEventListener("click",()=>{
 			    drawerClose()
 		    }),
-		    navbarToggler.addEventListener("click",()=>{
-			    drawerToggle()
-		    });
-		    */
-		    
-		    
-		    
-		    //jquery code here
+		    navbarToggler.addEventListener("click",()=>{drawerToggle()}),
 		    $(()=>{
-			    $(".sk-nav").addClass("navbar-expand-"+navExpandClass)
-			    $('<div class="drawerProfile bg-primary text-light" ></div><div class="drawerNav" ></div>').appendTo("#sk-drawer");
-			    $('<p class="p-2" >Satish Kumar Sharma<br>Email : XXXXXXX@gmail.com<br>Contact : 9XXXXXXXX0</p>').appendTo(".drawerProfile")
-			    $('.navbar-nav').clone().appendTo('.drawerNav');
-			    $("#sk-drawer").addClass("d-"+navExpandClass+"-none");
-			    $("#overlay").addClass("d-"+navExpandClass+"-none");
-			    
-		    })
+			    $(".sk-nav").addClass("navbar-expand-"+navExpandClass),
+			    $('<div class="drawerProfile bg-primary text-light" ></div><div class="drawerNav" ></div>').appendTo("#sk-drawer"),
+			    $('<p class="p-2" >Satish Kumar Sharma<br>Email : XXXXXXX@gmail.com<br>Contact : 9XXXXXXXX0</p>').appendTo(".drawerProfile"),
+			    $(".navbar-nav").clone().appendTo(".drawerNav"),
+			    $("#sk-drawer").addClass("d-"+navExpandClass+"-none"),
+			    $("#overlay").addClass("d-"+navExpandClass+"-none")
+		    });
 		</script>
 	</body>
 </html>
