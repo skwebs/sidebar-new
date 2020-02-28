@@ -1,51 +1,61 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 	<head>
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io@master/css/universal-parallax.min.css" >
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io@master/css/animate-3.7.2.css" >
+		
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700" rel="stylesheet">
+		
 		<title>Touch Responsive Sidebar Drawer</title>
 		<style type="text/css">
-		*{margin:0;padding:0;box-sizing:border-box;}
-		body {height:100vh; }
-		#touchSurface{
-			width:100%;
-			height:100vh;
-			text-align:center;
-			padding:10px;
+		*,:after,:before{
+		margin:0;padding:0;box-sizing:border-box;
+		}
+		body,html{
+		height:100%;width:100%
+		}
+		body{
+		font-family:'Source Sans Pro',helvetica,arial;font-size:18px;
+		}
+		h1,h2,h3,h4,h5,h6{
+		font-weight:700;
+		}
+		.overflowX-hidden{
+		overflow-x:hidden;
 		}
 		#sk-drawer{
-			position:fixed;
-			top:0;
-			bottom:0;
-			z-index:1299;
-			width:300px;
-			background:#fff; /*rgba(0,0,0,.5);*/
-			transform:translateX(-300px);
-			box-shadow:0 0 7px rgba(0,0,0,.3); 
+		position:fixed;
+		top:0;
+		bottom:0;
+		width:300px;
+		background:#fff; /*rgba(0,0,0,.5);*/
+		transform:translateX(-300px);
+		box-shadow:0 0 7px rgba(0,0,0,.3); 
 		}
-			/* Bootstrap customization*/
+		/* Bootstrap customization*/
 		.sk-nav{
-			box-shadow:0 0 5px rgba(0,0,0,0.5);
+		box-shadow:0 0 5px rgba(0,0,0,0.5);
 		}
 		.bg-white{
-			background:#fff;
+		background:#fff;
 		}
 		.sk-nav .navbar-toggler:hover,
 		.sk-nav .navbar-toggler:focus,
 		.sk-nav .navbar-toggler:active{
-			outline:none;
-			box-shadow:2px 2px 5px rgba(0,0,0,0.2);
+		outline:none;
+		box-shadow:2px 2px 5px rgba(0,0,0,0.2);
 		}
 		#overlay{
-			position:fixed;
-			top:0;
-			bottom:0;left:0;right:0;
-			z-index:1031;
-			background:rgba(0,0,0,.5);
-			display:none;
+		position:fixed;
+		top:0;
+		bottom:0;left:0;right:0;
+		background:rgba(0,0,0,.5);
+		display:none;
 		}
 		.drawerProfile{
 		width:100%;
@@ -94,14 +104,149 @@
 		font-family: FontAwesome;
 		content: "\f015";
 		}
+		.navbar-brand img{
+		height:45px;
+		}
 		
+		
+		
+		.parallax-section {
+		-webkit-align-items: center;
+		align-items: center;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-align: center;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		margin: 0;
+		padding: 15px;
+		position: relative;
+		width: 100%;
+		overflow:hidden;
+		}
+		.parallax-section .content {
+		background: rgba(0, 0, 0, .65);
+		border-radius: 8px;
+		color: #fff;
+		margin: 0 auto;
+		padding: 30px 35px;
+		text-align: center;
+		}
+		.vh-100{
+		height:100vh;
+		}
+		.wow{
+		visibility:hidden;
+		} 
+		.center-center{display:flex;flex-direction: column;justify-content: center;align-items:center;}
+		
+		.bg-img{
+			background-image:url("./img/bg4.jpg");
+		}
+		.plugins a{
+		text-decoration:none;
+		color:#ff;
+		}
+		
+		/*
+		|-----------------------------------------
+		| footer css (All footer CSS here)
+		|-----------------------------------------
+		*/
+		.copyright {
+		background:rgba(0,0,0,.2);
+		color:grey;
+		}
+		#more-links a{
+		margin:5px 10px;
+		display:inline-block;
+		color:grey;
+		text-decoration:none;
+		transition:.5s;
+		}
+		#more-links a:hover{
+		color:#fff;
+		transform:translateX(3px);
+		}
+		.social{flex-direction:row !important;color:grey;}
+		.social ul{
+		margin:0 5px;
+		padding:0;
+		display:flex;
+		}
+		.social ul li{
+		list-style:none;
+		margin:0 5px;
+		}
+		.social ul li a{
+		position:relative;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		width:40px;
+		height:40px;
+		/*border-radius:50%;*/
+		text-decoration:none;
+		font-size:1.25rem;
+		color:#fff;
+		transition:all .5s;
+		}
+		
+		.social ul li a .fa{
+		transition:.5s;
+		}
+		.social ul li a:hover{
+		border:1px solid #fff;
+		border-radius:50%;
+		}
+		.social ul li a:hover .fa{
+		color:#fff;
+		transform:scale(.85);
+		}
+		
+		
+		/* data-aos */
+		[data-aos] {
+		visibility: hidden;
+		}
+		[data-aos].animated {
+		visibility: visible;
+		}
+		.share{
+		position:fixed;
+		background:rgba(255,255,255,.05);
+		width:40px;
+		height:40px;
+		border-radius:50%;
+		right:25px;
+		bottom:100px;
+		box-shadow:0 0 10px rgba(0,0,0,.5),0 0 25px rgba(0,0,0,.05);
+		color:rgba(0,0,0,.3);
+		z-index:1200;
+		}
+		.bg-contact{
+		background:rgba(0,0,0,0.99) url("https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io@master/img/typing.jpg") no-repeat center center;
+		background-size:cover;
+		}
+		.bg-contact .layer{
+		background:rgba(0,0,0,0.65);
+		color:#fff;
+		}
+		.bg-contact .layer a{
+		display:inline-block;
+		color:#fff;
+		}
 		</style>
 	</head>
 	<body>
-		<nav class="navbar sk-nav fixed-top navbar-expand-m navbar-light bg-white">
+		<div id="sk-drawer" >	</div>
+		<div id="overlay" ></div>
+		<nav class="navbar py-0 sk-nav fixed-top navbar-expand-m navbar-light bg-white">
 		<div class="container" >
-			<a class="navbar-brand" href="#">
-			<b>Logo</b>
+			<a class="navbar-brand pl-2 wow fadeInRightBig" href="#">
+				<img src="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io@master/img/skwebs-3-88.png" alt="skweb-logo" >
 			</a>
 			<button class="navbar-toggler" type="button" >
 				<span class="navbar-toggler-icon"></span>
@@ -124,34 +269,131 @@
 		
 
 		
-		<div id="sk-drawer" >	</div>
-		<div id="overlay" ></div>
-		<div id="touchSurface" ><br><br><br><br>
-			<h2>Touch Responsive Sidebar</h2>
+		
+		<div class="overflowX-hidden">
+		
+		
+			<section class="parallax-section vh-100" >
+				<div class="content container wow fadeInUpBig" >
+					<h1 class="h1 wow fadeInLeft" data-wow-delay=".6s">Welcome to SKWebs. </h1>
+					<p class="text-justify wow fadeInRight" data-wow-delay=".9s">Here you get some ideas with code and their example based on my creative idea for beginners that can you use in your project. And you also get some selected useful plugin that make your project unique. </p>
+					<p class="m-0 py-2 bg-primary wow fadeInUpBig" data-wow-delay=".9s"><a class="text-light d-block "  href="https://github.com/skwebs/skwebs.github.io" >Read more...</a></p>
+					</div>
+				<div class="parallax" data-parallax-image="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io@master/img/bg4.jpg"></div>
+			</section>
+			
+		
+		
+		
+		
+		
+		
+		<div class="container px-4 px-md-5 py-5"  >
+			<h1 class="h1 p-2 wow fadeInUp" >About this project.</h1>
+			<p class="text-justify wow fadeInUp" > I always want to create something new, unique and creative web app that has following features and I tried to achieve it in this project.</p>
 			<br>
-			<h3>Features</h3>
-			<p>
-				You can open sidebar by swiping finger <br>
-				from the end of left side. Sidebar will be<br>
-				open or, close with your finger moving <br>
-				direction as like android/google app.
+			<p class="h2 wow fadeInUp" >Features:</p><br>
+			<h4 class="h4 wow fadeInUp" > 1. Touch responsive sidebar.</h4>
+			<p class="wow fadeInUp text-justify" data-wow-delay=".3s">
+				I tried to make touch responsive sidebar that allows to
+				open & close sidebar drawer with your finger moving direction as like android 
+				application sidebar drawer.
+				<br>
+				You can open sidebar by swiping finger
+				from the end of left side. Sidebar will be
+				open or, close with your finger moving 
+				direction.
 			</p>
 			<br>
 			<br>
 			
 			
 		</div>
+		
+		<section class="parallax-section vh-100" >
+		<div class="content container wow fadeInUpBig" >
+		<h1 class="h1 wow fadeInUp" data-wow-delay=".9s">Used Plugins. </h1>
+		<div class="plugins text-left pl-5 wow fadeInUp" data-wow-delay=".9s">
+			1. jQuery<a href="#" > Link</a><br>
+			2. Bootstrap 4<a href="#" > Link</a><br>
+			3. Animate.css<a href="#" > Link</a><br>
+			4. wow.js<a href="#" > Link</a> or,<br> &nbsp&nbsp&nbsp AOS</a><a href="#" > Link</a><br>
+			5. universal-parallax<a href="#" > Link</a><br>
+			6. Wave<a href="#" > Link.js</a><br>
+		</div>
+		</div>
+		<div class="parallax" data-parallax-image="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io@master/img/typing.jpg"></div>
+		</section>
+		
+		
+		<div class="py-5 px-4" >
+		<br><br>
+			<h1 class="h3 border border-secondary rounded text-secondary text-center p-3 wow fadeInUp" >About Us</h1>
+			<p class="text-secondary p-3 text-justify wow fadeInUp" ><i>Hi, I am Satish. I have knowledge and experience of front-end language 
+			as like <b>html, CSS, JavaScript</b> and back-end script <b>php, MySQL</b> with <b>Object 
+			Oriented Programme (OPP)</b> Concept and also have knowledge of frameworks as like <b>Bootstrap, jQuery</b> and another useful 
+			<b>PHP Libraries</b>. I like to create something new and I always curious about learn and use new things.<br><br>
+			</i></p>
+		</div>
+		
+		<div class="bg-contact" >
+		<div class="layer p-5" >
+		<p class="p-2 mb-4 border h3 text-center wow fadeInUp" >Connect with Us</p>
+		<a class="wow fadeInLeft" href="mailto:skwebservises@gmail.com" ><i class="fa fa-envelope " ></i> : skwebservises@gmail.com</a><br>
+		<a class="wow fadeInRight" href="https://facebook.com/skwebservices" ><i class="fa fa-facebook-square " ></i> : https://fb.com/skwebservices</a>
+		</div>
+		</div>
+		
+		<i class="share center-center fa fa-share-alt fa-2x" ></i>
+		
+		<footer class="footer bg-dark" >
+		<div class="py-1 bg-primary" >
+		<div class="container text-light social center-center" >
+		<ul class="d-none d-md-flex" > <li>Follow us on : </li></ul>
+		<ul>
+		<li class="fb wow fadeInLeftBig" data-wow-delay=".3s" ><a href="https://fb.com/skwebsofficial/" ><i class="fa fa-facebook" ></i></a></li>
+		<li class="tw wow fadeInLeftBig" data-wow-delay="0" ><a href="https://twitter.com/SatishKmrSharma/" ><i class="fa fa-twitter" ></i></a></li>
+		<li class="ig wow fadeInRightBig" data-wow-delay="0" ><a href="https://instagram.com/satishkmrsharma/" ><i class="fa fa-instagram" ></i></a></li>
+		<li class="yt wow fadeInRightBig" data-wow-delay="0.3s" ><a href="#!" ><i class="fa fa-youtube" ></i></a></li>
+		</ul>
+		</div>
+		</div>
+		<hr class="m-0 bg-half-black" >
+		<div id="more-links" class="container py-4" >
+		<a class="wow fadeInRightBig" data-wow-delay=".3s" data-wow-offset="0" href="mailto:skwebservices@gmail.com" >Email</a>
+		<a class="wow fadeInRightBig" data-wow-delay=".6s" data-wow-offset="0" href="https://facebook.com/satishkumarsharma05">Facebook</a>
+		<a class="wow fadeInRightBig" data-wow-delay=".9s" data-wow-offset="0" href="https://m.me/sks555sks" >Messenger</a>
+		
+		</div>
+		<div class="copyright my-auto py-4 text-center " >
+		&copy<script>//
+		document.write(new Date().getFullYear())</script> <a class="text-lightgrey mr-md-5" href="./" ><b>SKWebs.GitHub.io</b>.</a><span class="d-none d-md-inline" >All Right Reserved.</span>
+		<!--<hr class="d-md-none bg-half-black" >
+		Designed & Developed by <strong><a href="https://skwebs.github.io" data-aos="pulse infinite" data-aos-offset="0" class="d-inline-block border border-primary rounded px-1" >S.K.Webs</a></strong> <!--<a href="https://facebook.com/skwebsofficial" class="nowrap border border-primary rounded px-1 d-inline-block" >S.K.Sharma <i class="fa fa-facebook-square" ></i></a>
+		-->
+		</div>
+		</footer>
+		
+	
+		</div>
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-		
+		<!--javascript libraries-->
+		<script src="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io@master/js/jquery-3.4.1.min.js" ></script>
+		<script src="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io@master/js/popper-1.16.0.min.js" ></script>
+		<script src="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io@master/js/bootstrap-4.4.1.min.js" ></script>
+		<script src="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io@master/js/jquery.waypoints-4.0.0.min.js" ></script>
+		<script src="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io@master/js/universal-parallax.min.js" ></script>
+		<script src="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io@master/js/wow-1.1.2.min.js" ></script>
 		<script type="text/javascript">
-		    /*/variables declaration
+		    //minified js
+		    function elem(e){return document.querySelector(e)}var touchSurface=elem("body"),drawer=elem("#sk-drawer"),drawerWidth=drawer.offsetWidth,startX="",change="",drawerOpened=!1,minTouchLeft=30,navbarToggler=elem(".navbar-toggler"),overlay=elem("#overlay");const __SETTING={dTrans:"transform 500ms ",oTrans:"all 1s ease-in 500ms",navExpandClass:"md",dIndex:1033};function handleStart(e){drawerOpened||(startX=e.changedTouches[0].clientX)<minTouchLeft&&(overlay.style.opacity=0,overlay.style.display="block",drawer.style.transition="none",overlay.style.transition="none")}function handleMove(e){drawerOpened||startX<minTouchLeft&&(change=e.changedTouches[0].clientX-startX)-drawerWidth<0&&(drawer.style.transform="translateX("+(change-drawerWidth)+"px)",overlay.style.opacity=change/drawerWidth)}function handleEnd(e){drawerOpened||startX<minTouchLeft&&(change<drawerWidth/3?drawerClose():drawerOpen())}function drawerHandlerStart(e){overlay.style.display="block",drawer.style.transition="none",overlay.style.transition="none",drawerOpened&&(startX=e.changedTouches[0].clientX)}function drawerHandlerMove(e){drawerOpened&&(change=e.changedTouches[0].clientX-startX)<0&&(drawer.style.transform="translateX("+change+"px)",overlay.style.opacity=(drawerWidth+change)/drawerWidth)}function drawerHandlerEnd(e){drawerOpened&&change<0&&(change<0-drawerWidth/3?drawerClose():drawerOpen())}function handleCancel(e){}function drawerOpen(){overlay.style.display="block",drawer.style.transform="translateX(0px)",drawer.style.transition=__SETTING.dTrans,overlay.style.transition=__SETTING.oTrans,drawerOpened=!0}function drawerClose(){overlay.style.display="none",drawer.style.transform="translateX(-"+drawerWidth+"px)",drawer.style.transition=__SETTING.dTrans,overlay.style.transition=__SETTING.oTrans,drawerOpened=!1}function drawerToggle(){drawerOpened?drawerClose():drawerOpen()}document.addEventListener("DOMContentLoaded",()=>{touchSurface.addEventListener("touchstart",handleStart,!1),touchSurface.addEventListener("touchend",handleEnd,!1),touchSurface.addEventListener("touchmove",handleMove,!1),drawer.addEventListener("touchstart",drawerHandlerStart,!1),drawer.addEventListener("touchmove",drawerHandlerMove,!1),drawer.addEventListener("touchend",drawerHandlerEnd,!1),(new universalParallax).init({speed:4}),wow=new WOW({boxClass:"wow",animateClass:"animated",offset:120,mobile:!0,live:!0}),wow.init()}),overlay.addEventListener("click",()=>{drawerClose()}),navbarToggler.addEventListener("click",()=>{drawerToggle()}),$(()=>{$(".sk-nav").addClass("navbar-expand-"+__SETTING.navExpandClass),$('<div class="drawerProfile bg-primary text-light" ></div><div class="drawerNav" ></div>').appendTo("#sk-drawer"),$('<p class="p-2" >Satish Kumar Sharma<br>Email : XXXXXXX@gmail.com<br>Contact : 9XXXXXXXX0</p>').appendTo(".drawerProfile"),$(".navbar-nav").clone().appendTo(".drawerNav"),$("#sk-drawer").addClass("d-"+__SETTING.navExpandClass+"-none"),$("#overlay").addClass("d-"+__SETTING.navExpandClass+"-none"),$("#sk-drawer").css("z-index",__SETTING.dIndex),$("#overlay").css("z-index",__SETTING.dIndex-1)});
+		    
+		    /*
+		    //variables declaration
 		    function elem(e){return document.querySelector(e);}
-		    var touchSurface = document.querySelector("#touchSurface");
-		    var drawer = document.querySelector("#sk-drawer");
+		    var touchSurface = elem("body");
+		    var drawer = elem("#sk-drawer");
 		    var drawerWidth = drawer.offsetWidth;
 		    var startX = "";
 		    var change = "";
@@ -159,30 +401,24 @@
 		    var minTouchLeft =30;
 		    var navbarToggler = elem(".navbar-toggler");
 		    var overlay = elem("#overlay");
-		    var drawerTransition = "transform 500ms ";
-		    var overlayTransition = "all 1s ease-in 500ms";
-		    var navExpandClass = "md";
-		    
-		    document.addEventListener("DOMContentLoaded", ()=>{
-		      touchSurface.addEventListener("touchstart", handleStart, false);
-		      touchSurface.addEventListener("touchend", handleEnd, false);
-		      touchSurface.addEventListener("touchmove", handleMove, false);
-		      //for drawer
-		      drawer.addEventListener("touchstart",drawerHandlerStart,false);
-		      drawer.addEventListener("touchmove",drawerHandlerMove,false);
-		      drawer.addEventListener("touchend",drawerHandlerEnd,false);
-		    });
-		    
+		    //CSS related variables
+		    const __SETTING = {
+		    dTrans : "transform 500ms ",
+		    oTrans : "all 1s ease-in 500ms",
+		    navExpandClass : "md",
+		    dIndex : 1033 //1029 for under nav or, 1032 for above nav (don't use 1030/1031)
+		    };
 		    //drawer opening time
 		    function handleStart(e){
 		        if(!drawerOpened){
 		            startX = e.changedTouches[0].clientX;
-		        }
-		        if(startX<minTouchLeft){
-			        overlay.style.opacity=0;
-			        overlay.style.display="block";
-			        drawer.style.transition="none";
-			        overlay.style.transition="none";
+		        
+			        if(startX<minTouchLeft){
+				        overlay.style.opacity=0;
+				        overlay.style.display="block";
+				        drawer.style.transition="none";
+				        overlay.style.transition="none";
+			        }
 		        }
 		    }
 		    function handleMove(e){
@@ -244,15 +480,15 @@
 		    function drawerOpen(){
 			    overlay.style.display="block";
 		        drawer.style.transform="translateX(0px)";
-		        drawer.style.transition=drawerTransition;
-		        overlay.style.transition=overlayTransition;
+		        drawer.style.transition=__SETTING.dTrans;
+		        overlay.style.transition=__SETTING.oTrans;
 		        drawerOpened = true;
 		    }
 		    function drawerClose(){
 		        overlay.style.display="none";
 		        drawer.style.transform="translateX(-"+drawerWidth+"px)";
-		        drawer.style.transition=drawerTransition;
-		        overlay.style.transition=overlayTransition;
+		        drawer.style.transition=__SETTING.dTrans;
+		        overlay.style.transition=__SETTING.oTrans;
 		        drawerOpened = false;
 		    }
 		    
@@ -263,105 +499,44 @@
 				    drawerOpen();
 			    }
 		    }
+		    document.addEventListener("DOMContentLoaded", ()=>{
+			    touchSurface.addEventListener("touchstart", handleStart, false);
+			    touchSurface.addEventListener("touchend", handleEnd, false);
+			    touchSurface.addEventListener("touchmove", handleMove, false);
+			    //for drawer
+			    drawer.addEventListener("touchstart",drawerHandlerStart,false);
+			    drawer.addEventListener("touchmove",drawerHandlerMove,false);
+			    drawer.addEventListener("touchend",drawerHandlerEnd,false);
+		    
+			    new universalParallax().init({
+			    speed: 4
+			    });
+			    wow = new WOW(
+			    {
+			    boxClass:     'wow',      // default
+			    animateClass: 'animated', // default
+			    offset:       120,          // default
+			    mobile:       true,       // default
+			    live:         true        // default
+			    }
+			    )
+			    wow.init();
+		    });
 		    overlay.addEventListener("click",()=>{drawerClose();})
 		    navbarToggler.addEventListener("click",()=>{drawerToggle();})
 		   
 		    //jquery code here
 		    $(()=>{
-			    $(".sk-nav").addClass("navbar-expand-"+navExpandClass)
+			    $(".sk-nav").addClass("navbar-expand-"+__SETTING.navExpandClass)
 			    $('<div class="drawerProfile bg-primary text-light" ></div><div class="drawerNav" ></div>').appendTo("#sk-drawer");
 			    $('<p class="p-2" >Satish Kumar Sharma<br>Email : XXXXXXX@gmail.com<br>Contact : 9XXXXXXXX0</p>').appendTo(".drawerProfile")
 			    $('.navbar-nav').clone().appendTo('.drawerNav');
-			    $("#sk-drawer").addClass("d-"+navExpandClass+"-none");
-			    $("#overlay").addClass("d-"+navExpandClass+"-none");
-			    
+			    $("#sk-drawer").addClass("d-"+__SETTING.navExpandClass+"-none");
+			    $("#overlay").addClass("d-"+__SETTING.navExpandClass+"-none");
+			    $("#sk-drawer").css("z-index",__SETTING.dIndex);
+			    $("#overlay").css("z-index",(__SETTING.dIndex-1));
 		    })
 		    */
-		    
-		    
-		    
-		    
-		    
-		    
-		    
-		    function elem(e){return document.querySelector(e)}
-		    var touchSurface=document.querySelector("#touchSurface"),
-		    drawer=document.querySelector("#sk-drawer"),
-		    drawerWidth=drawer.offsetWidth,
-		    startX="",
-		    change="",
-		    drawerOpened=!1,
-		    minTouchLeft=30,
-		    navbarToggler=elem(".navbar-toggler"),
-		    overlay=elem("#overlay"),
-		    drawerTransition="transform 500ms ",
-		    overlayTransition="all 1s ease-in 500ms",
-		    navExpandClass="md";
-		    function handleStart(e){
-			    drawerOpened||(startX=e.changedTouches[0].clientX),
-			    startX<minTouchLeft&&(overlay.style.opacity=0,
-			    overlay.style.display="block",
-			    drawer.style.transition="none",
-			    overlay.style.transition="none")
-		    }
-		    function handleMove(e){
-			    drawerOpened||startX<minTouchLeft&&(change=e.changedTouches[0].clientX-startX)-drawerWidth<0&&(drawer.style.transform="translateX("+(change-drawerWidth)+"px)",
-			    overlay.style.opacity=change/drawerWidth)
-		    }
-		    function handleEnd(e){
-			    drawerOpened||startX<minTouchLeft&&(change<drawerWidth/3?drawerClose():drawerOpen())
-		    }
-		    function drawerHandlerStart(e){
-			    overlay.style.display="block",
-			    drawer.style.transition="none",
-			    overlay.style.transition="none",
-			    drawerOpened&&(startX=e.changedTouches[0].clientX)
-		    }
-		    function drawerHandlerMove(e){
-			    drawerOpened&&(change=e.changedTouches[0].clientX-startX)<0&&(drawer.style.transform="translateX("+change+"px)",
-			    overlay.style.opacity=(drawerWidth+change)/drawerWidth)
-		    }
-		    function drawerHandlerEnd(e){
-			    drawerOpened&&change<0&&(change<0-drawerWidth/3?drawerClose():drawerOpen())
-		    }
-		    function handleCancel(e){}
-		    function drawerOpen(){
-			    overlay.style.display="block",
-			    drawer.style.transform="translateX(0px)",
-			    drawer.style.transition=drawerTransition,
-			    overlay.style.transition=overlayTransition,
-			    drawerOpened=!0
-		    }
-		    function drawerClose(){
-			    overlay.style.display="none",
-			    drawer.style.transform="translateX(-"+drawerWidth+"px)",
-			    drawer.style.transition=drawerTransition,
-			    overlay.style.transition=overlayTransition,
-			    drawerOpened=!1
-		    }
-		    function drawerToggle(){
-			    drawerOpened?drawerClose():drawerOpen()
-		    }
-		    document.addEventListener("DOMContentLoaded",()=>{
-			    touchSurface.addEventListener("touchstart",handleStart,!1),
-			    touchSurface.addEventListener("touchend",handleEnd,!1),
-			    touchSurface.addEventListener("touchmove",handleMove,!1),
-			    drawer.addEventListener("touchstart",drawerHandlerStart,!1),
-			    drawer.addEventListener("touchmove",drawerHandlerMove,!1),
-			    drawer.addEventListener("touchend",drawerHandlerEnd,!1)
-		    }),
-		    overlay.addEventListener("click",()=>{
-			    drawerClose()
-		    }),
-		    navbarToggler.addEventListener("click",()=>{drawerToggle()}),
-		    $(()=>{
-			    $(".sk-nav").addClass("navbar-expand-"+navExpandClass),
-			    $('<div class="drawerProfile bg-primary text-light" ></div><div class="drawerNav" ></div>').appendTo("#sk-drawer"),
-			    $('<p class="p-2" >Satish Kumar Sharma<br>Email : XXXXXXX@gmail.com<br>Contact : 9XXXXXXXX0</p>').appendTo(".drawerProfile"),
-			    $(".navbar-nav").clone().appendTo(".drawerNav"),
-			    $("#sk-drawer").addClass("d-"+navExpandClass+"-none"),
-			    $("#overlay").addClass("d-"+navExpandClass+"-none")
-		    });
 		</script>
 	</body>
 </html>
