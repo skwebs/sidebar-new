@@ -46,7 +46,7 @@ width: 1.5rem;
 /* ----- //slider__one dots ------ */
 
 /* ----- slider__one prev-next buttons ----- */
-.slider__one 
+slider__one 
 .slick__btn{
 position:absolute;
 bottom:-2.5px;
@@ -58,6 +58,19 @@ z-index:2;
 background:transparent;
 margin:0 .5rem;
 }
+.slider__one 
+.slick__btn{
+position:absolute;
+bottom:-1px;
+font:1.75rem/1.75rem FontAwesome;
+border:none;
+font-weight:bold;
+color:#aaa;
+z-index:2;
+background:transparent;
+margin:0 .5rem;
+}
+
 .slider__one 
 .slick__prev{
 left:0rem;
@@ -78,10 +91,10 @@ content:'\f0a9';
 }
 .slider-progress {
 	position:relative;
-	bottom:30px;
+	bottom:33.5px;
 	width: 100%;
 	height: 3px;
-	background: rgba(125,125,125,.085);
+	background: rgba(125,125,125,.1);
 }
 /* ----- //slider__one prev-next buttons ----- */
 
@@ -273,4 +286,3 @@ background-color: purple;
  {
 outline:none;
 }
-
