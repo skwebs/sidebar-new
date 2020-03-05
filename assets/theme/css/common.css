@@ -93,8 +93,5 @@ background-image:url("assets/img/web/img1.jpg") !important;
     background-image:linear-gradient(to top right, #000749 20%, #1CB1FB);
     border:none;
     border-radius:50% !important;
-    width:3rem;
-    height:3rem;
-    text-align:center;
-    vertical-align:middle;
+    padding:8px 10px;
 }
