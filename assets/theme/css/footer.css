@@ -56,7 +56,7 @@ color:grey;
 .footer__links a{
 margin:5px 10px;
 display:inline-block;
-color:grey !important;
+color:#aaa !important;
 text-decoration:none;
 transition:.5s;
 }
