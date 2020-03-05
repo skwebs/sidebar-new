@@ -2,8 +2,32 @@
 <html lang="en">
 	<head>
 		<!-- Required meta tags -->
+		<title>:: SKWebs | Touch Responsive Sidebar Drawer ::</title>
+		<!-- Required meta tags -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="This is a touch responsive sidebar drawer that can open and close on finger movement direction as like android app sidebar drawer." />
+		<meta name="keywords" content="Touch responsive Sidebar drawer, Open and close sidebar on finger movement tester," />
+		<meta name="theme-color" content="#0c5ca2" >
+		<!--<meta name="theme-color" content="#0d123d">-->
+		
+		<!-- Required og tags -->
+		<meta property="og:title" content=":: SKWebs | Touch Responsive Sidebar Drawer ::" >
+		<meta property="og:description" content="This is a touch responsive sidebar drawer that can open and close on finger movement gester as like android app sidebar drawer." >
+		<meta property="og:locale" content="en_UK" >
+		
+		<!-- Required og:image tags -->
+		<meta property="og:image" content="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io@master/assets/img/icons/icon-460x460-68.92k.png">
+		<meta property="og:image:url" content="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io@master/assets/img/icons/icon-460x460-68.92k.png">
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:alt" content="skwebs-logo">
+		<meta property="og:image:width" content="460" />
+		<meta property="og:image:height" content="460" />
+		
+		<!-- Required favicon -->
+		<link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io@0aad010a75907a60147ad7b719b145f8a6cceec8/assets/img/skwebs-3-88.png" sizes="16x16,32x32,64x64" >
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		
 		<!-- all CSS file-->
 		<!-- font awesome 4.7.0 -->
@@ -16,8 +40,10 @@
 		<link href="./assets/lib/animate-css/3.7.2/animate.css"  rel="stylesheet">
 		<!-- slick carousel -->
 		<link href="./assets/lib/slick/slick.css"  rel="stylesheet">
-		<!-- slick carousel -->
+		<!-- slick waves -->
 		<link href="./assets/lib/waves/waves.min.css"  rel="stylesheet">
+		<!-- hamburger css -->
+		<link href="./assets/theme/css/hamburger.css"  rel="stylesheet">
 		<!-- font -->
 		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700" rel="stylesheet">
 		
@@ -50,8 +76,8 @@
 		<!-- favicon -->
 		<link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/skwebs/skwebs.github.io@0aad010a75907a60147ad7b719b145f8a6cceec8/assets/img/skwebs-3-88.png" sizes="16x16,32x32,64x64" >
 		
-		<title>Touch Responsive Sidebar Drawer</title>
-		<style type="text/css"></style>
+		<style type="text/css">
+		</style>
 	</head>
 	<body>
 		<!--overflow hidden of whole page -->
@@ -68,8 +94,10 @@
 					<a class="pl-2 navbar-brand wow fadeIn" href="#">
 						<img src="./assets/img/icons/skwebs-64x64-3.88k.png">
 					</a>
-					<button class="navbar-toggler flat-box" type="button" >
-						<span class="navbar-toggler-icon"></span>
+					<button class="hamburger flat-box hamburger--arrowalt navbar-toggler" type="button" aria-controls="menuContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
 					</button>
 					<div class="collapse navbar-collapse">
 						<ul class="navbar-nav mr-auto">
@@ -102,12 +130,12 @@
 				
 				<!-- welcome parallax -->
 				<section class="pl__container vh-100 flat-box" >
-					<div style="position:relative;" class="content container wow fadeInUp float-box-light" >
-						<h1 class="h1 wow fadeInLeft" data-wow-delay=".6s">Welcome to SKWebs. </h1>
-						<p class="text-justify wow fadeInRight" data-wow-delay=".9s">Here you get some ideas with code and their example based on my creative idea for beginners that can you use in your project. And you also get some selected useful plugin that make your project unique. </p>
-						<p class="m-0 py-2 bg-primary wow fadeInUp" data-wow-delay=".9s"><a class="text-light d-block "  href="https://github.com/skwebs/skwebs.github.io" >Read more...</a></p>
-					</div>
-					<div class="parallax" data-parallax-image="./assets/img/web/laptop-typing.jpg">
+				<div style="position:relative;" class="content container wow fadeInUp float-box-light" >
+				<h1 class="h1 wow fadeInLeft" data-wow-delay=".6s">Welcome to SKWebs. </h1>
+				<p class="text-justify wow fadeInRight" data-wow-delay=".9s">Here you get some ideas with code and their example based on my creative idea for beginners that can you use in your project. And you also get some selected useful plugin that make your project unique. </p>
+				<p class="m-0 py-2 bg-primary wow fadeInUp" data-wow-delay=".9s"><a class="text-light d-block "  href="https://skwebs.github.io" >Read more...</a></p>
+				</div>
+				<div class="parallax" data-parallax-image="./assets/img/web/laptop-typing.jpg">
 				</section>
 				
 				
