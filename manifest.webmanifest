@@ -6,12 +6,12 @@
   "background_color": "#fff",
   "description": "S.K.Webs is Web App by Satish.",
   "icons": [{
-    "src": "assets/img/icons/icon-128.png",
+    "src": "assets/img/icons/icon-128x128-12.34k.png",
     "sizes": "128x128",
     "type": "image/png"
   },
   {
-    "src": "assets/img/icons/icon-256.png",
+    "src": "assets/img/icons/icon-256x256-36.96k.png",
     "sizes": "256x256",
     "type": "image/png"
   }]
