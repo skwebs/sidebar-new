@@ -1,7 +1,7 @@
 /*
 * slider.css
 */
-/* ====== slider one ============= */
+/* ====== slider__one one ============= */
 .slider__one_wraper{
 background:#232f3f;
 }
@@ -10,14 +10,14 @@ background:#232f3f;
 overflow:hidden;
 }
 
-/* ----- slider dots ------ */
+/* ----- slider__one dots ------ */
 .slider__one 
 .slick-dots {
 display: -webkit-box;
 display: flex;
 -webkit-box-pack: center;
 justify-content: center;
-margin: 0;
+margin:5px 0 7px 0;
 padding:  0;
 list-style-type: none;
 }
@@ -43,21 +43,20 @@ li.slick-active button {
 /*background-color: #bbb;*/
 width: 1.5rem;
 }
-/* ----- //slider dots ------ */
+/* ----- //slider__one dots ------ */
 
- /* ----- slider prev-next buttons ----- */
+/* ----- slider__one prev-next buttons ----- */
 .slider__one 
 .slick__btn{
 position:absolute;
-bottom:0;
-font:2rem/2rem FontAwesome;
-width:2rem;
-top:0;
+bottom:-2.5px;
+font:1.75rem/1.75rem FontAwesome;
 border:none;
 font-weight:bold;
 color:#aaa;
 z-index:2;
 background:transparent;
+margin:0 .5rem;
 }
 .slider__one 
 .slick__prev{
@@ -66,19 +65,37 @@ left:0rem;
 }
 .slider__one 
 .slick__next{
-right:0rem;
+right:0;
 /*background:linear-gradient(to left,rgba(255,255,255,.25),rgba(255,255,255,0));*/
 }
 .slider__one 
 .slick__prev:before{
-content:'\f104';
+content:'\f0a8';
 }
 .slider__one 
 .slick__next:before{
-content:'\f105';
+content:'\f0a9';
 }
+.slider-progress {
+	position:relative;
+	bottom:30px;
+	width: 100%;
+	height: 3px;
+	background: rgba(125,125,125,.085);
+}
+/* ----- //slider__one prev-next buttons ----- */
 
-/* ----- slider slides and items ------ */
+
+/* ----- slider__one progress ----- */
+.slider-progress .progress {
+	width: 0%;
+	height: 3px;
+	background:linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,1));
+}
+/* ----- //slider__one progress ----- */
+
+
+/* ----- slider__one slides and items ------ */
 .slider__one 
 .slider__one_item{
 width:100%;
@@ -96,9 +113,11 @@ background:rgba(0,0,0,.65);
 /*background:rgba(14,22,173,.65);
 /*background-image:linear-gradient(to bottom right,rgba(255,0,249,0.5),rgba(14,22,173,0.5));*/
 }
+
+
 /*  shorthand => animation-name, animation-duration, animation-timing-function, animation-delay, animation-iteration-count, animation-direction, animation-fill-mode, and animation-play-state. */
 
-/* ----- animation on slider items ------ */
+/* ----- animation on slider__one items ------ */
 .slider__one_layer 
 .slider__one_slide{
 	opacity:0;
@@ -109,6 +128,7 @@ background:rgba(0,0,0,.65);
 	z-index:2;
 	text-shadow:2px 2px 5px #000;
 }
+
 /* action on activate slide */
 /* add .slick-active class in .slider__one_layer */
 .slick-active 
@@ -148,6 +168,25 @@ background:rgba(0,0,0,.65);
 .slider__one_info{
 	animation:fadeInUp 1s both 1.5s;
 }
+/* ----- //slider__one slides and items ------ */
+
+/* ----- slider__one play-pause ------ */
+.slider__one_play-pause{
+position:absolute;
+top:0;bottom:0;left:0;right:0;
+font:1.75rem/1.75rem FontAwesome;
+border:none;
+font-weight:bold;
+color:#aaa;
+z-index:2;
+background:transparent;
+margin:0 .5rem;
+}
+/* ----- //slider__one play-pause ------ */
+
+
+
+
 
 /* CSS for desktop */
 @media only screen and (min-width: 950px) {
@@ -156,26 +195,10 @@ background:rgba(0,0,0,.65);
 		padding:100px;
 	}
 }
-/*.slider__one {background:#232f3f;}
-
-
-/* ==== Slider Image Transition === */
-@keyframes Slick-FastSwipeIn{
-	0%{transform:rotate3d(0,1,0,150deg) scale(0)  perspective(400px);} 
-	100%{transform:rotate3d(0,1,0,0deg) scale(1) perspective(400px);} 
-}
 
 
 /* ====== //slider one ============= */
 
-
-			/********************
-			** *       * *****  #
-			**  *     *  *     **
-			**   *   *   ***** **
-			**    * *    *     **
-			**     *     ***** **
-			*********************
 
 
 
@@ -251,4 +274,3 @@ background-color: purple;
 outline:none;
 }
 
-				
