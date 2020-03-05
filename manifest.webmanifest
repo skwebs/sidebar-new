@@ -3,7 +3,7 @@
   "short_name": "S.K.Webs",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#fff",
+  "background_color": "#0c5ca2",
   "description": "S.K.Webs is Web App by Satish.",
   "icons": [{
     "src": "assets/img/icons/icon-128x128-12.34k.png",
