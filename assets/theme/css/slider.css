@@ -1,0 +1,254 @@
+/*
+* slider.css
+*/
+/* ====== slider one ============= */
+.slider__one_wraper{
+background:#232f3f;
+}
+.slider__one_wraper 
+.slider__one{
+overflow:hidden;
+}
+
+/* ----- slider dots ------ */
+.slider__one 
+.slick-dots {
+display: -webkit-box;
+display: flex;
+-webkit-box-pack: center;
+justify-content: center;
+margin: 0;
+padding:  0;
+list-style-type: none;
+}
+.slider__one 
+.slick-dots li {
+margin: 0 0.25rem;
+}
+.slider__one 
+.slick-dots button {
+display: block;
+width: .75rem;
+height: .75rem;
+padding: 0;
+border: none;
+border-radius: .75rem;
+background-color: #bbb;
+transition:width .3s;
+text-indent: -9999px;
+}
+.slider__one 
+.slick-dots 
+li.slick-active button {
+/*background-color: #bbb;*/
+width: 1.5rem;
+}
+/* ----- //slider dots ------ */
+
+ /* ----- slider prev-next buttons ----- */
+.slider__one 
+.slick__btn{
+position:absolute;
+bottom:0;
+font:2rem/2rem FontAwesome;
+width:2rem;
+top:0;
+border:none;
+font-weight:bold;
+color:#aaa;
+z-index:2;
+background:transparent;
+}
+.slider__one 
+.slick__prev{
+left:0rem;
+/*background:linear-gradient(to right,rgba(255,255,255,.25),rgba(255,255,255,0));*/
+}
+.slider__one 
+.slick__next{
+right:0rem;
+/*background:linear-gradient(to left,rgba(255,255,255,.25),rgba(255,255,255,0));*/
+}
+.slider__one 
+.slick__prev:before{
+content:'\f104';
+}
+.slider__one 
+.slick__next:before{
+content:'\f105';
+}
+
+/* ----- slider slides and items ------ */
+.slider__one 
+.slider__one_item{
+width:100%;
+height:20rem;
+overflow:hidden;
+background-position:center;
+background-repeat:no-repeat;
+background-size:cover;
+}
+.slider__one_item 
+.slider__one_layer{
+width:100%;
+height:100%;
+background:rgba(0,0,0,.65);
+/*background:rgba(14,22,173,.65);
+/*background-image:linear-gradient(to bottom right,rgba(255,0,249,0.5),rgba(14,22,173,0.5));*/
+}
+/*  shorthand => animation-name, animation-duration, animation-timing-function, animation-delay, animation-iteration-count, animation-direction, animation-fill-mode, and animation-play-state. */
+
+/* ----- animation on slider items ------ */
+.slider__one_layer 
+.slider__one_slide{
+	opacity:0;
+	padding:40px;
+	width:100%;
+	height:20rem;
+	color:#fff;
+	z-index:2;
+	text-shadow:2px 2px 5px #000;
+}
+/* action on activate slide */
+/* add .slick-active class in .slider__one_layer */
+.slick-active 
+.slider__one_slide {
+	opacity:1;
+}
+.slider__one_slide 
+.slider__one_header1{
+	animation:fadeOutRight 2s both .3s;
+	font:40px/50px RalewayR;
+	color: #fd0;
+}
+.slider__one_slide 
+.slider__one_header2{
+	animation:fadeOutRight 2s both .3s;
+	font:30px/35px RalewayB;
+	color:lime;
+}
+.slider__one_slide 
+.slider__one_info{
+	animation:fadeOutRight 2s both .3s;
+	font:20px/25px RalewayB;
+	color:cyan;text-align:justify;
+}
+.slick-active 
+.slider__one_slide 
+.slider__one_header1{
+	animation:fadeInDown 1s both .5s;
+}
+.slick-active 
+.slider__one_slide 
+.slider__one_header2{
+	animation:fadeInUp 1s both 1s;
+}
+.slick-active 
+.slider__one_slide 
+.slider__one_info{
+	animation:fadeInUp 1s both 1.5s;
+}
+
+/* CSS for desktop */
+@media only screen and (min-width: 950px) {
+	.slider__one_layer 
+	.slider__one_slide{
+		padding:100px;
+	}
+}
+/*.slider__one {background:#232f3f;}
+
+
+/* ==== Slider Image Transition === */
+@keyframes Slick-FastSwipeIn{
+	0%{transform:rotate3d(0,1,0,150deg) scale(0)  perspective(400px);} 
+	100%{transform:rotate3d(0,1,0,0deg) scale(1) perspective(400px);} 
+}
+
+
+/* ====== //slider one ============= */
+
+
+			/********************
+			** *       * *****  #
+			**  *     *  *     **
+			**   *   *   ***** **
+			**    * *    *     **
+			**     *     ***** **
+			*********************
+
+
+
+/* ====== vender credit slider ============= */
+
+.vendor__credit{
+	background-image:url("./assets/img/web/grey-paper.jpg");
+}
+.vendor__credit 
+.vendor__slider{
+width:100%;
+}
+/* the slides */
+.vendor__slider 
+.slick-slide {
+margin:0  1px;
+}
+/* the parent */
+.vendor__slider 
+.slick-list {
+margin: 0 -2px;
+}
+.vendor__credit 
+.vendor__slider 
+.vendor__slider_item{
+height:70px;
+}
+.vendor__credit 
+.vendor__slider 
+.vendor__slider_item img{
+height:100%;
+width:100%;
+}
+
+.vendor__slider 
+.slick-dots {
+display: -webkit-box;
+display: flex;
+-webkit-box-pack: center;
+justify-content: center;
+margin: 0;
+padding: .5rem 0;
+list-style-type: none;
+}
+.vendor__slider 
+.slick-dots li {
+margin: 0 0.25rem;
+}
+.vendor__slider 
+.slick-dots button {
+display: block;
+width: 1rem;
+height: 1rem;
+padding: 0;
+border: none;
+border-radius: 100%;
+background-color: #bbb;
+text-indent: -9999px;
+}
+.vendor__slider 
+.slick-dots 
+li.slick-active button {
+background-color: purple;
+}
+
+/* common for all sliders */
+.slick-dots button:hover,
+.slick-dots button:focus,
+ .slick-dots button:active,
+ .slick__btn:hover,
+ .slick__btn:active
+ {
+outline:none;
+}
+
+				
