@@ -43,7 +43,7 @@
 		<!-- empty css -->
 		<link href="./assets/theme/css/empty.css"  rel="stylesheet">
 		
-		<title>:: SKWebs | Touch Responsive Sidebar Drawer ::</title>
+		<title>Touch Responsive Sidebar Drawer</title>
 		
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -114,15 +114,18 @@
 					</div>
 					<div class="parallax" data-parallax-image="./assets/img/web/sea-bank.jpg">
 				</section>
-				
 				<!-- /welcome parallax -->
+				
 				<!-- header slider (slick carousel) -->
+				<style type="text/css">
+				slider__one_item{background-image:url("./assets/img/web/laptop-typing.jpg");}
+				</style>
 				<section class="py-2 slider__one_wraper" >
 				<h1 class="text-center text-light" >Slider Selection</h1>
 				<div class="slider__one flat-box-light" >
 					
 					<!-- Item -->
-					<div style="background:url('./assets/img/web/img1.jpg')"  class="slider__one_item" >
+					<div  class="slider__one_item" >
 						<div class="slider__one_layer" >	
 							<div class="slider__one_slide" >
 								<div>
@@ -141,7 +144,7 @@
 					<!-- // Item -->
 					
 					<!-- Item -->
-					<div style="background:url('./assets/img/web/img2.jpg')"  class="slider__one_item" >
+					<div  class="slider__one_item" >
 						<div class="slider__one_layer" >	
 							<div class="slider__one_slide" >
 								<div>
@@ -160,7 +163,7 @@
 					<!-- // Item -->
 					
 					<!-- Item -->
-					<div style="background:url('./assets/img/web/img3.jpg')"  class="slider__one_item" >
+					<div  class="slider__one_item" >
 						<div class="slider__one_layer" >	
 							<div class="slider__one_slide" >
 								<div>
@@ -177,8 +180,10 @@
 					</div>
 					<!-- // Item -->
 					
-					<!-- Item -->
-					<div style="background:url('./assets/img/web/img4.jpg')"  class="slider__one_item" >
+					<!-- Item --
+					<div style="background:url('./assets/img/web/laptop-typing.jpg')"  class="slider__one_item" >
+					-->
+					<div  class="slider__one_item" >
 						<div class="slider__one_layer" >	
 							<div class="slider__one_slide" >
 								<div>
@@ -196,7 +201,7 @@
 					<!-- // Item -->
 					
 					<!-- Item -->
-					<div style="background:url('./assets/img/web/img4.jpg')"  class="slider__one_item" >
+					<div  class="slider__one_item" >
 						<div class="slider__one_layer" >	
 							<div class="slider__one_slide" >
 								<div>
@@ -214,7 +219,7 @@
 					<!-- // Item -->
 					
 					<!-- Item -->
-					<div style="background:url('./assets/img/web/img4.jpg')"  class="slider__one_item" >
+					<div  class="slider__one_item" >
 						<div class="slider__one_layer" >	
 							<div class="slider__one_slide" >
 								<div>
@@ -232,7 +237,7 @@
 					<!-- // Item -->
 					
 					<!-- Item -->
-					<div style="background:url('./assets/img/web/img4.jpg')"  class="slider__one_item" >
+					<div  class="slider__one_item" >
 						<div class="slider__one_layer" >	
 							<div class="slider__one_slide" >
 								<div>
@@ -383,7 +388,7 @@
 			
 		</div>
 		<!---<i class="share text-info center-center float-icon fa fa-share-alt fa-2x" ></i>-->
-		<p id="top" class="p-2 text-light bg-dark float-box-light rounded" >Top</p>
+		<p id="top" class="text-light float-box-light" ><i class="fa fa-2x fa-arrow-up" aria-hidden="true"></i></p>
 		<!--/overflow hidden of whole page -->
 		<!-- JavaScript libraries -->
 		<!-- jQuery -->
@@ -402,6 +407,8 @@
 		<script src="./assets/lib/waves/waves.min.js" ></script>
 		<!-- share js -->
 		<script src="./assets/lib/custom/js/share.js" ></script>
+		<!-- share js -->
+		<script src="./assets/lib/backstretch/2.1.18/jquery.backstretch.min.js" ></script>
 		
 		<!-- init js -->
 		<script src="./assets/theme/js/init.js" ></script>
@@ -412,7 +419,10 @@
 		<!-- common js -->
 		<script src="./assets/theme/js/common.js" ></script>
 		<script type="text/javascript">
+		 $(()=>{
+		 //$(".slider__one_item").backstretch("https://unsplash.com/photos/1DRq1ZsE2N0")
 		 
+		 });
 		</script>
 	</body>
 </html>
