@@ -1,0 +1,43 @@
+		@font-face{
+		font-family:'intro_regular';
+		src:url(./panton/intro-webfont.eot);
+		src:url(./panton/intro-webfont.eot?#iefix) format("embedded-opentype"),url(./panton/intro-webfont.woff2) format("woff2"),url(./panton/intro-webfont.woff) format("woff"),url(./panton/intro-webfont.ttf) format("truetype"),url(https://www.freevector.com/panton/intro-webfont-daa7f659a7be9c8100274f0b2cafd9d56654162ec9d627e41fd71aba9f128e9a.svg#intro_regular) format("svg");
+		font-weight:normal;
+		font-style:normal
+		}
+		@font-face{
+		font-family:'panton_bold';
+		src:url(./panton/panton-bold-webfont.eot);
+		src:url(./panton/panton-bold-webfont.eot?#iefix) format("embedded-opentype"),url(./panton/panton-bold-webfont.woff2) format("woff2"),url(./panton/panton-bold-webfont.woff) format("woff"),url(./panton/panton-bold-webfont.ttf) format("truetype"),url(https://www.freevector.com/panton/panton-bold-webfont-33884798e3bf2b77605b615aab9bcc730e785faaa9f5ce151e3288648b3934fd.svg#pantonbold) format("svg");
+		font-weight:normal;
+		font-style:normal
+		}
+		@font-face{
+		font-family:'panton_extrabold';
+		src:url(./panton/panton-extrabold-webfont.eot);
+		src:url(./panton/panton-extrabold-webfont.eot?#iefix) format("embedded-opentype"),url(./panton/panton-extrabold.woff2) format("woff2"),url(./panton/panton-extrabold-webfont.woff) format("woff"),url(./panton/panton-extrabold-webfont.ttf) format("truetype"),url(https://www.freevector.com/panton/panton-extrabold-webfont-1848271d6cdde92e7e29bc18f07bdd043d279b7440239748fe46ca975f19fefb.svg#panton_extraboldregular) format("svg");
+		font-weight:normal;
+		font-style:normal
+		}
+		@font-face{
+		font-family:'panton_semibold';
+		src:url(./panton/panton-semibold-webfont.eot);
+		src:url(./panton/panton-semibold-webfont.eot?#iefix) format("embedded-opentype"),url(./panton/panton-semibold-webfont.woff2) format("woff2"),url(./panton/panton-semibold-webfont.woff) format("woff"),url(./panton/panton-semibold-webfont.ttf) format("truetype"),url(https://www.freevector.com/panton/panton-semibold-webfont-1c99189968f9996381e7b52975e1e4f928eace211116c9a8234820329c916453.svg#panton_semiboldregular) format("svg");
+		font-weight:normal;
+		font-style:normal
+		}
+		@font-face{
+		font-family:'panton_regular';
+		src:url(./panton/panton-regular-webfont.eot);
+		src:url(./panton/panton-regular-webfont.eot?#iefix) format("embedded-opentype"),url(./panton/panton-regular-webfont.woff2) format("woff2"),url(./panton/panton-regular-webfont.woff) format("woff"),url(./panton/panton-regular-webfont.ttf) format("truetype"),url(https://www.freevector.com/panton/panton-regular-webfont-3e89171debd11e1335d5fe4e1ccaa85a15a5dc7f41d62c73274656b063280db1.svg#pantonregular) format("svg");
+		font-weight:normal;
+		font-style:normal
+		}
+		
+		@font-face{
+		font-family:'panton_demo_black';
+		src:url(./fonts/pantonDemo/PantonNarrowDemo-Light.otf);
+		font-weight:normal;
+		font-style:normal
+		}
+		
